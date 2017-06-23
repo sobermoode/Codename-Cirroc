@@ -15,7 +15,7 @@ class LetterSprite: SKSpriteNode {
     
     struct Codepoints {
         static let minCodepoint = UInt32(97)
-        static let maxCodepoint = UInt32(101)
+        static let maxCodepoint = UInt32(122)
     }
     
     init(_ letter: Character) {
