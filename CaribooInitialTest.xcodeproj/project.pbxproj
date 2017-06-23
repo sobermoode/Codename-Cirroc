@@ -15,6 +15,7 @@
 		811549A31EFB77AE00E8DFD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811549A11EFB77AE00E8DFD9 /* Main.storyboard */; };
 		811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811549A41EFB77AE00E8DFD9 /* Assets.xcassets */; };
 		811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811549A61EFB77AE00E8DFD9 /* LaunchScreen.storyboard */; };
+		811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549B01EFB791E00E8DFD9 /* Gameboard.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		811549A41EFB77AE00E8DFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		811549A71EFB77AE00E8DFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811549A91EFB77AE00E8DFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		811549B01EFB791E00E8DFD9 /* Gameboard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gameboard.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,26 @@
 		811549961EFB77AE00E8DFD9 /* CaribooInitialTest */ = {
 			isa = PBXGroup;
 			children = (
+				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
+				811549B01EFB791E00E8DFD9 /* Gameboard.sks */,
+				811549AF1EFB77E600E8DFD9 /* misc */,
+				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
+			);
+			path = CaribooInitialTest;
+			sourceTree = "<group>";
+		};
+		811549AF1EFB77E600E8DFD9 /* misc */ = {
+			isa = PBXGroup;
+			children = (
 				811549971EFB77AE00E8DFD9 /* AppDelegate.swift */,
 				811549991EFB77AE00E8DFD9 /* GameScene.sks */,
 				8115499B1EFB77AE00E8DFD9 /* Actions.sks */,
 				8115499D1EFB77AE00E8DFD9 /* GameScene.swift */,
-				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
 				811549A11EFB77AE00E8DFD9 /* Main.storyboard */,
-				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
 				811549A61EFB77AE00E8DFD9 /* LaunchScreen.storyboard */,
 				811549A91EFB77AE00E8DFD9 /* Info.plist */,
 			);
-			path = CaribooInitialTest;
+			name = misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 				8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */,
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
+				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,
 				8115499C1EFB77AE00E8DFD9 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
