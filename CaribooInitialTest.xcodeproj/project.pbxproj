@@ -16,6 +16,9 @@
 		811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811549A41EFB77AE00E8DFD9 /* Assets.xcassets */; };
 		811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811549A61EFB77AE00E8DFD9 /* LaunchScreen.storyboard */; };
 		811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549B01EFB791E00E8DFD9 /* Gameboard.sks */; };
+		816966181EFD8A450059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 816966171EFD8A450059EF19 /* letters.atlas */; };
+		8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816966191EFD8AB70059EF19 /* LetterSprite.swift */; };
+		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		811549A71EFB77AE00E8DFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811549A91EFB77AE00E8DFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811549B01EFB791E00E8DFD9 /* Gameboard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gameboard.sks; sourceTree = "<group>"; };
+		816966171EFD8A450059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = letters.atlas; sourceTree = "<group>"; };
+		816966191EFD8AB70059EF19 /* LetterSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterSprite.swift; sourceTree = "<group>"; };
+		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +70,11 @@
 			children = (
 				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
 				811549B01EFB791E00E8DFD9 /* Gameboard.sks */,
+				816966191EFD8AB70059EF19 /* LetterSprite.swift */,
+				8169661B1EFD8F030059EF19 /* ButtonNode.swift */,
 				811549AF1EFB77E600E8DFD9 /* misc */,
 				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
+				816966171EFD8A450059EF19 /* letters.atlas */,
 			);
 			path = CaribooInitialTest;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 				811549A31EFB77AE00E8DFD9 /* Main.storyboard in Resources */,
 				8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */,
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
+				816966181EFD8A450059EF19 /* letters.atlas in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
 				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,
 				8115499C1EFB77AE00E8DFD9 /* Actions.sks in Resources */,
@@ -160,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */,
 				8115499E1EFB77AE00E8DFD9 /* GameScene.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
+				8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +338,7 @@
 				811549AE1EFB77AE00E8DFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
