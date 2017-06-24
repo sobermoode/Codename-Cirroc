@@ -18,7 +18,15 @@ class LetterSprite: SKSpriteNode {
         static let maxCodepoint = UInt32(122)
     }
     
-    init(_ letter: Character) {
+    init?(_ letter: Character) {
+        let letterIndex = String(letter).lowercased().utf16.startIndex
+        let codeUnit = String(letter).utf16[letterIndex]
+        if let scalar = UnicodeScalar(codeUnit) {
+            guard CharacterSet.lowercaseLetters.contains(scalar) else {
+                return nil
+            }
+        }
+        
         let letterTexture = LetterSprite.lettersAtlas.textureNamed(String(letter))
         
         super.init(texture: letterTexture,
@@ -30,14 +38,14 @@ class LetterSprite: SKSpriteNode {
         zPosition = 5
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    static func randomLetter() -> LetterSprite {
+    convenience init() {
         let rando = UnicodeScalar(arc4random_uniform(LetterSprite.Codepoints.maxCodepoint - LetterSprite.Codepoints.minCodepoint) + LetterSprite.Codepoints.minCodepoint)!
         let randoChar = Character(rando)
         
-        return LetterSprite(randoChar)
+        self.init(randoChar)!
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }

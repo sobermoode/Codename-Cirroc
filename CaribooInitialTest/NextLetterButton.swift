@@ -19,7 +19,7 @@ class NextLetterButton: SKSpriteNode {
 
 extension NextLetterButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
-        let nextLetter = LetterSprite.randomLetter()
+        let nextLetter = LetterSprite()
         
         guard parent != nil else {
             print("couldn't find the parent node...")
