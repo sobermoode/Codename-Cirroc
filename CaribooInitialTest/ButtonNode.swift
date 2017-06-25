@@ -6,8 +6,6 @@
 //  Copyright © 2017 Aaron Justman. All rights reserved.
 //
 
-import Foundation
-
 protocol ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode)
 }

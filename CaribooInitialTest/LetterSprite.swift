@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import Foundation
 
 class LetterSprite: SKSpriteNode {
     
