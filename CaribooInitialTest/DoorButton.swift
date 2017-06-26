@@ -25,12 +25,19 @@ extension DoorButton {
 
 extension DoorButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
-        //print("pressed the door button!!!")
-        //let pictureBox = parent!.childNode(withName: "pictureBox")!
         let doorButton = parent!.childNode(withName: "doorButton")!
         doorButton.alpha = 0
         
         let door = parent!.childNode(withName: "door")!
         door.run(SKAction.fadeOut(withDuration: 0.2))
+        
+        let rando = arc4random_uniform(10) + 1
+        if rando < 3 {
+            let pictureBoxScene = parent!
+            let gameboardScene = pictureBoxScene.scene!
+            let oscar = gameboardScene.childNode(withName: "./oscar")!
+            oscar.isUserInteractionEnabled = true
+            oscar.run(SKAction.moveTo(x: gameboardScene.frame.midX, duration: 0.4))
+        }
     }
 }
