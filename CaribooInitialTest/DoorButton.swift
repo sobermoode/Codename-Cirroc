@@ -31,6 +31,6 @@ extension DoorButton: ButtonNode {
         doorButton.alpha = 0
         
         let door = parent!.childNode(withName: "door")!
-        door.run(SKAction.fadeOut(withDuration: 0.5))
+        door.run(SKAction.fadeOut(withDuration: 0.2))
     }
 }
