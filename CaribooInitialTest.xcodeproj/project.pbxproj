@@ -19,6 +19,7 @@
 		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
+		81EBC1B01F0177FC003DEC56 /* animals.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1AF1F0177FC003DEC56 /* animals.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
+		81EBC1AF1F0177FC003DEC56 /* animals.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animals.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				811549961EFB77AE00E8DFD9 /* CaribooInitialTest */,
+				81EBC1AF1F0177FC003DEC56 /* animals.atlas */,
 				811549951EFB77AE00E8DFD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
 				816966201EFDB38A0059EF19 /* letters.atlas in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
+				81EBC1B01F0177FC003DEC56 /* animals.atlas in Resources */,
 				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,
 				8115499C1EFB77AE00E8DFD9 /* Actions.sks in Resources */,
 			);
