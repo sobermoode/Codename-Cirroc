@@ -16,6 +16,8 @@
 		811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811549A61EFB77AE00E8DFD9 /* LaunchScreen.storyboard */; };
 		811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549B01EFB791E00E8DFD9 /* Gameboard.sks */; };
 		812D902E1F01B371001B7053 /* Oscar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902D1F01B371001B7053 /* Oscar.swift */; };
+		812D90301F02F589001B7053 /* Gameboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902F1F02F589001B7053 /* Gameboard.swift */; };
+		812D90321F02F5FC001B7053 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D90311F02F5FC001B7053 /* StartButton.swift */; };
 		8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816966191EFD8AB70059EF19 /* LetterSprite.swift */; };
 		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
@@ -38,6 +40,8 @@
 		811549A91EFB77AE00E8DFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811549B01EFB791E00E8DFD9 /* Gameboard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gameboard.sks; sourceTree = "<group>"; };
 		812D902D1F01B371001B7053 /* Oscar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscar.swift; sourceTree = "<group>"; };
+		812D902F1F02F589001B7053 /* Gameboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameboard.swift; sourceTree = "<group>"; };
+		812D90311F02F5FC001B7053 /* StartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		816966191EFD8AB70059EF19 /* LetterSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterSprite.swift; sourceTree = "<group>"; };
 		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
@@ -115,9 +119,11 @@
 		81EBC1B61F018BFB003DEC56 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				812D902F1F02F589001B7053 /* Gameboard.swift */,
 				816966191EFD8AB70059EF19 /* LetterSprite.swift */,
 				8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */,
 				81EBC1B91F0197F5003DEC56 /* DoorButton.swift */,
+				812D90311F02F5FC001B7053 /* StartButton.swift */,
 				8169661B1EFD8F030059EF19 /* ButtonNode.swift */,
 				812D902D1F01B371001B7053 /* Oscar.swift */,
 			);
@@ -205,12 +211,14 @@
 			files = (
 				81EBC1BA1F0197F5003DEC56 /* DoorButton.swift in Sources */,
 				8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */,
+				812D90321F02F5FC001B7053 /* StartButton.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
 				8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */,
+				812D90301F02F589001B7053 /* Gameboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
