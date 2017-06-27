@@ -32,12 +32,32 @@ extension DoorButton: ButtonNode {
         door.run(SKAction.fadeOut(withDuration: 0.2))
         
         let rando = arc4random_uniform(10) + 1
-        if rando < 3 {
+        if rando < 3 || rando == 10 {
             let pictureBoxScene = parent!
             let gameboardScene = pictureBoxScene.scene!
-            let oscar = gameboardScene.childNode(withName: "./oscar")!
-            oscar.isUserInteractionEnabled = true
-            oscar.run(SKAction.moveTo(x: gameboardScene.frame.midX, duration: 0.4))
+            
+            var oscar = Oscar()
+            switch rando {
+                case 1:
+                    fallthrough
+                case 2:
+                    oscar = gameboardScene.childNode(withName: "./oscar") as! Oscar
+                    oscar.isUserInteractionEnabled = true
+                    oscar.type = .type1
+                    oscar.run(SKAction.moveTo(x: gameboardScene.frame.midX, duration: 0.4))
+                
+                case 10:
+                    oscar = gameboardScene.childNode(withName: "./oscar2") as! Oscar
+                    oscar.isUserInteractionEnabled = true
+                    oscar.type = .type2
+                    oscar.run(SKAction.fadeIn(withDuration: 0.4))
+                    oscar.run(SKAction.repeatForever(SKAction.sequence([SKAction.setTexture(SKTexture(imageNamed: "oscar2-2")),
+                                                                        SKAction.wait(forDuration: 0.4),
+                                                                        SKAction.setTexture(SKTexture(imageNamed: "oscar2-1")),
+                                                                        SKAction.wait(forDuration: 0.4)])))
+                default:
+                    break
+            }
         }
     }
 }
