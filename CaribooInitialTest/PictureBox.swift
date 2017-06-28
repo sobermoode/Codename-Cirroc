@@ -10,15 +10,23 @@ import SpriteKit
 
 class PictureBox: SKScene {
     
-    var picture: SKSpriteNode!
+    struct Themes {
+        static let Animals = ["arcticFox",
+                              "chicken",
+                              "cow",
+                              "dog",
+                              "duck",
+                              "elephant",
+                              "fish",
+                              "horse",
+                              "kitten"]
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        if let pic = childNode(withName: "picture") as? SKSpriteNode {
-            picture = pic
-        } else {
-            print("Couldn't find the picture sprite for PictureBox", name!)
-        }
+        let rando = Int(arc4random_uniform(UInt32(Themes.Animals.count)))
+        let picture = childNode(withName: "picture") as! SKSpriteNode
+        picture.run(SKAction.setTexture(SKTexture(imageNamed: Themes.Animals[rando])))
     }
 }

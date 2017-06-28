@@ -11,7 +11,8 @@ import SpriteKit
 class Gameboard: SKScene {
     
     /*override func didMove(to view: SKView) {
-        let cover = childNode(withName: "cover") as! SKSpriteNode
-        cover.alpha = 0
+        //let cover = childNode(withName: "cover") as! SKSpriteNode
+        //cover.alpha = 0
+        print("Gameboard didMove(to:")
     }*/
 }

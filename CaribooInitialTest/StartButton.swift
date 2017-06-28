@@ -25,7 +25,10 @@ extension StartButton {
 
 extension StartButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
-        scene!.childNode(withName: "cover")!.removeFromParent()
+        if let cover = scene!.childNode(withName: "cover") {
+            cover.removeFromParent()
+        }
+        
         run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
     }
 }
