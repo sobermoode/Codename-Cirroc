@@ -22,6 +22,7 @@
 		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
+		81CA97011F04BD7D0033F170 /* PictureBoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CA97001F04BD7D0033F170 /* PictureBoxNode.swift */; };
 		81EBC1B01F0177FC003DEC56 /* animals.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1AF1F0177FC003DEC56 /* animals.atlas */; };
 		81EBC1B41F0178B4003DEC56 /* PictureBox.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1B31F0178B3003DEC56 /* PictureBox.sks */; };
 		81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBC1B71F019502003DEC56 /* PictureBox.swift */; };
@@ -46,6 +47,7 @@
 		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
+		81CA97001F04BD7D0033F170 /* PictureBoxNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBoxNode.swift; sourceTree = "<group>"; };
 		81EBC1AF1F0177FC003DEC56 /* animals.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animals.atlas; sourceTree = "<group>"; };
 		81EBC1B31F0178B3003DEC56 /* PictureBox.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PictureBox.sks; sourceTree = "<group>"; };
 		81EBC1B71F019502003DEC56 /* PictureBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBox.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				811549B01EFB791E00E8DFD9 /* Gameboard.sks */,
 				81EBC1B31F0178B3003DEC56 /* PictureBox.sks */,
 				81EBC1B71F019502003DEC56 /* PictureBox.swift */,
+				81CA97001F04BD7D0033F170 /* PictureBoxNode.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				812D90321F02F5FC001B7053 /* StartButton.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
+				81CA97011F04BD7D0033F170 /* PictureBoxNode.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
