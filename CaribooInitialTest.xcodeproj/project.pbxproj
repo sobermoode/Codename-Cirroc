@@ -48,7 +48,7 @@
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
 		81BE96541F05A63F008A9638 /* Actual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actual.swift; sourceTree = "<group>"; };
-		81EBC1AF1F0177FC003DEC56 /* animals.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = animals.atlas; sourceTree = "<group>"; };
+		81EBC1AF1F0177FC003DEC56 /* animals.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = animals.atlas; path = ../animals.atlas; sourceTree = "<group>"; };
 		81EBC1B31F0178B3003DEC56 /* PictureBox.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PictureBox.sks; sourceTree = "<group>"; };
 		81EBC1B71F019502003DEC56 /* PictureBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBox.swift; sourceTree = "<group>"; };
 		81EBC1B91F0197F5003DEC56 /* DoorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorButton.swift; sourceTree = "<group>"; };
@@ -69,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				811549961EFB77AE00E8DFD9 /* CaribooInitialTest */,
-				81EBC1AF1F0177FC003DEC56 /* animals.atlas */,
 				811549951EFB77AE00E8DFD9 /* Products */,
 				81BE96561F05A7DD008A9638 /* -- OLD */,
 			);
@@ -89,8 +88,8 @@
 				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
 				81EBC1B51F018BE3003DEC56 /* SKS */,
 				81EBC1B61F018BFB003DEC56 /* Implementation */,
+				81BE96591F05A91D008A9638 /* Images */,
 				811549AF1EFB77E600E8DFD9 /* misc */,
-				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
 			);
 			path = CaribooInitialTest;
 			sourceTree = "<group>";
@@ -136,6 +135,15 @@
 				81EBC1B71F019502003DEC56 /* PictureBox.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		81BE96591F05A91D008A9638 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
+				81EBC1AF1F0177FC003DEC56 /* animals.atlas */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		81EBC1B51F018BE3003DEC56 /* SKS */ = {
