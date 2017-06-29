@@ -44,10 +44,5 @@ extension StartButton: ButtonNode {
             case .restartMode:
                 (scene as! Gameboard).setup()
         }
-        
-        //run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
-        //let texture = (mode == .restartMode) ? SKTexture(imageNamed: "startButton") : SKTexture(imageNamed: "restartButton")
-        //run(SKAction.setTexture(texture))
-        //mode = (mode == .restartMode) ? .startMode : .restartMode
     }
 }
