@@ -10,6 +10,12 @@ import SpriteKit
 
 class StartButton: SKSpriteNode {
     
+    enum Mode: String {
+        case startMode, restartMode
+    }
+    
+    var mode = Mode(rawValue: "startMode")!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -25,10 +31,23 @@ extension StartButton {
 
 extension StartButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
-        if let cover = scene!.childNode(withName: "cover") {
-            cover.removeFromParent()
+        switch mode {
+            case .startMode:
+                if let cover = scene!.childNode(withName: "cover") {
+                    cover.removeFromParent()
+                }
+                
+                run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
+                
+                mode = .restartMode
+                
+            case .restartMode:
+                (scene as! Gameboard).setup()
         }
         
-        run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
+        //run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
+        //let texture = (mode == .restartMode) ? SKTexture(imageNamed: "startButton") : SKTexture(imageNamed: "restartButton")
+        //run(SKAction.setTexture(texture))
+        //mode = (mode == .restartMode) ? .startMode : .restartMode
     }
 }
