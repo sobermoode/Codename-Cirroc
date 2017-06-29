@@ -41,13 +41,13 @@ extension DoorButton: ButtonNode {
                 case 1:
                     fallthrough
                 case 2:
-                    oscar = gameboardScene.childNode(withName: "./oscar") as! Oscar
+                    oscar = gameboardScene.childNode(withName: "oscar1") as! Oscar
                     oscar.isUserInteractionEnabled = true
                     oscar.type = .type1
                     oscar.run(SKAction.moveTo(x: gameboardScene.frame.midX, duration: 0.4))
                 
                 case 10:
-                    oscar = gameboardScene.childNode(withName: "./oscar2") as! Oscar
+                    oscar = gameboardScene.childNode(withName: "oscar2") as! Oscar
                     oscar.isUserInteractionEnabled = true
                     oscar.type = .type2
                     oscar.run(SKAction.fadeIn(withDuration: 0.4))

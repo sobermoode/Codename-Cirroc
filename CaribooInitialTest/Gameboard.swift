@@ -15,7 +15,6 @@ class Gameboard: SKScene {
     }
     
     func setup() {
-        
         let currentThemeTextures = SKTextureAtlas(named: PictureBox.Theme.Animals)
         var currentThemeNames = currentThemeTextures.textureNames
         
@@ -34,5 +33,11 @@ class Gameboard: SKScene {
                 print("couldn't get the actual for", box.name!)
             }
         }
+        
+        let oscar1 = childNode(withName: "oscar1")!
+        oscar1.run(SKAction.moveTo(x: frame.minX - (calculateAccumulatedFrame().width / 2), duration: 0.4))
+        
+        let oscar2 = childNode(withName: "oscar2")!
+        oscar2.run(SKAction.fadeOut(withDuration: 0.4))
     }
 }
