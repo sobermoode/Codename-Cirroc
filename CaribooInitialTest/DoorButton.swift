@@ -15,13 +15,11 @@ class DoorButton: SKSpriteNode {
         case fadeOut, slideUp(door: SKSpriteNode), starTrek(door: SKSpriteNode)
         
         func maxActions() -> UInt32 {
-            return 2
+            return 3
         }
         
         func rando() -> SKAction {
             var action = SKAction()
-            //let randoC = arc4random_uniform(2)
-            //let door = SKAction.perform(#selector("door()"), onTarget: )
             
             switch self {
                 case .fadeOut:
@@ -30,6 +28,7 @@ class DoorButton: SKSpriteNode {
                 case .slideUp(let door):
                     action = SKAction.run {
                         door.anchorPoint = CGPoint(x: 0.5, y: 1)
+                        door.position.y += door.calculateAccumulatedFrame().height / 2
                         door.run(SKAction.scaleY(to: 0, duration: 0.4))
                     }
                 
@@ -41,25 +40,30 @@ class DoorButton: SKSpriteNode {
                                                     size: CGSize(width: door.calculateAccumulatedFrame().width / 2,
                                                                  height: door.calculateAccumulatedFrame().height))
                         let rightSide = SKSpriteNode(texture: nil,
-                                                    color: color,
-                                                    size: CGSize(width: door.calculateAccumulatedFrame().width / 2,
-                                                                 height: door.calculateAccumulatedFrame().height))
+                                                     color: color,
+                                                     size: CGSize(width: door.calculateAccumulatedFrame().width / 2,
+                                                                  height: door.calculateAccumulatedFrame().height))
                         leftSide.anchorPoint = CGPoint(x: 0, y: 0.5)
                         leftSide.name = "leftSide"
+                        leftSide.position.x -= door.calculateAccumulatedFrame().width / 2
+                        leftSide.zPosition = 20
                         rightSide.anchorPoint = CGPoint(x: 1, y: 0.5)
                         rightSide.name = "rightSide"
+                        rightSide.position.x += door.calculateAccumulatedFrame().width / 2
+                        rightSide.zPosition = 20
                         
-                        door.addChild(leftSide)
-                        door.addChild(rightSide)
-                        
-                        /// turn door invisible here
-                        door.alpha = 0
-                        door.childNode(withName: "leftSide")!.alpha = 1
-                        door.childNode(withName: "rightSide")!.alpha = 1
-                        
-                        door.childNode(withName: "leftSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
-                        door.childNode(withName: "rightSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
-                    }
+                        if let actual = door.parent {
+                            actual.addChild(leftSide)
+                            actual.addChild(rightSide)
+                            
+                            door.alpha = 0
+                            actual.childNode(withName: "leftSide")!.alpha = 1
+                            actual.childNode(withName: "rightSide")!.alpha = 1
+                            
+                            actual.childNode(withName: "leftSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
+                            actual.childNode(withName: "rightSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
+                        }
+                }
                 
                 case .none:
                     break
@@ -77,18 +81,6 @@ class DoorButton: SKSpriteNode {
         
         isUserInteractionEnabled = true
     }
-    
-    /*func door() -> SKNode? {
-        var door: SKNode?
-        
-        if let actualDoor = parent!.childNode(withName: "door") {
-            door = actualDoor
-        } else {
-            door = nil
-        }
-        
-        return door
-    }*/
 }
 
 extension DoorButton {
@@ -101,9 +93,6 @@ extension DoorButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
         let doorButton = parent!.childNode(withName: "doorButton")!
         doorButton.alpha = 0
-        
-        //tempDoor = parent!.childNode(withName: "door") as? SKSpriteNode
-        //door.run(SKAction.fadeOut(withDuration: 0.2))
         door!.run(doorAction.rando())
         
         let rando = arc4random_uniform(10) + 1
