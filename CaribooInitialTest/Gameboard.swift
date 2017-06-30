@@ -22,13 +22,31 @@ class Gameboard: SKScene {
         for box in pictureBoxes {
             if let actual = box.actual() {
                 let contents = actual.children
-                contents[0].alpha = 1
-                contents[1].alpha = 1
+                let doorButton = contents[0] as! DoorButton
+                let door = contents[1] as! SKSpriteNode
+                let picture = contents[2] as! SKSpriteNode
                 
-                let rando = Int(arc4random_uniform(UInt32(currentThemeNames.count)))
+                doorButton.door = door
+                
+                var rando = Int(arc4random_uniform(doorButton.doorAction.maxActions()))
+                switch rando {
+                    case 0:
+                        doorButton.doorAction = .fadeOut
+                    case 1:
+                        doorButton.doorAction = .slideUp(door: doorButton.door!)
+                    case 2:
+                        doorButton.doorAction = .starTrek(door: doorButton.door!)
+                    default:
+                        break
+                }
+                
+                doorButton.alpha = 1
+                door.alpha = 1
+                
+                rando = Int(arc4random_uniform(UInt32(currentThemeNames.count)))
                 let themeName = currentThemeNames.remove(at: rando)
                 let texture = currentThemeTextures.textureNamed(themeName)
-                contents[2].run(SKAction.setTexture(texture))
+                picture.run(SKAction.setTexture(texture))
             } else {
                 print("couldn't get the actual for", box.name!)
             }
