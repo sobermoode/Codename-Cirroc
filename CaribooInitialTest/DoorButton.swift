@@ -19,6 +19,7 @@ class DoorButton: SKSpriteNode {
         }
         
         func rando() -> SKAction {
+            print("rando()...")
             var action = SKAction()
             
             switch self {
@@ -27,6 +28,7 @@ class DoorButton: SKSpriteNode {
                 
                 case .slideUp(let door):
                     action = SKAction.run {
+                        print("slide up")
                         door.anchorPoint = CGPoint(x: 0.5, y: 1)
                         door.position.y += door.calculateAccumulatedFrame().height / 2
                         door.run(SKAction.scaleY(to: 0, duration: 0.4))
@@ -34,6 +36,7 @@ class DoorButton: SKSpriteNode {
                 
                 case .starTrek(let door):
                     action = SKAction.run {
+                        print("star trek")
                         let color = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1)
                         let leftSide = SKSpriteNode(texture: nil,
                                                     color: color,
@@ -62,6 +65,8 @@ class DoorButton: SKSpriteNode {
                             
                             actual.childNode(withName: "leftSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
                             actual.childNode(withName: "rightSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
+                            actual.childNode(withName: "leftSide")!.removeFromParent()
+                            actual.childNode(withName: "rightSide")!.removeFromParent()
                         }
                 }
                 
@@ -91,9 +96,25 @@ extension DoorButton {
 
 extension DoorButton: ButtonNode {
     func buttonPress(_ pressedButton: ButtonNode) {
+        print("pressed a door button...")
+        print("parent:", parent!)
+        print("children:", parent!.children)
         let doorButton = parent!.childNode(withName: "doorButton")!
         doorButton.alpha = 0
+        /*door!.run(SKAction.run {
+            if let node = self.door!.parent {
+                self.door! = SKSpriteNode(texture: nil,
+                                          color: UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1),
+                                          size: node.calculateAccumulatedFrame().size)
+                self.door!.alpha = 1
+                self.door!.zPosition = 6
+            } else {
+                print("couldn't find the parent node...")
+            }
+        })*/
         door!.run(doorAction.rando())
+        door = nil
+        //door!.removeFromParent()
         
         let rando = arc4random_uniform(10) + 1
         if rando < 3 || rando == 10 {

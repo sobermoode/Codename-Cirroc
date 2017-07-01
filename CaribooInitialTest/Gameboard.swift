@@ -21,12 +21,32 @@ class Gameboard: SKScene {
         let pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
         for box in pictureBoxes {
             if let actual = box.actual() {
-                let contents = actual.children
-                let doorButton = contents[0] as! DoorButton
-                let door = contents[1] as! SKSpriteNode
-                let picture = contents[2] as! SKSpriteNode
+                //let contents = actual.children
+                let doorButton = actual.childNode(withName: "doorButton") as! DoorButton //contents[0] as! DoorButton
+                let door = actual.childNode(withName: "door") as! SKSpriteNode //contents[1] as! SKSpriteNode
+                //print("door:", door)
+                let picture = actual.childNode(withName: "picture") as! SKSpriteNode //contents[2] as! SKSpriteNode
                 
-                doorButton.door = door
+                doorButton.door = nil
+                door.removeFromParent()
+                
+                let newDoor = SKSpriteNode(texture: nil,
+                                    color: UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1),
+                                    size: actual.calculateAccumulatedFrame().size)
+                newDoor.alpha = 1
+                newDoor.name = "door"
+                newDoor.zPosition = 6
+                
+                doorButton.alpha = 1
+                doorButton.zPosition = 7
+                doorButton.door = newDoor
+                
+                actual.insertChild(newDoor, at: 1)
+                print("actual.door zPosition:", actual.childNode(withName: "door")!.zPosition)
+                print("actual.doorButton zPosition:", actual.childNode(withName: "doorButton")!.zPosition)
+                
+                //print("newDoor:", newDoor)
+                //print("doorButton.door:", doorButton.door!)
                 
                 var rando = Int(arc4random_uniform(doorButton.doorAction.maxActions()))
                 switch rando {
@@ -40,8 +60,8 @@ class Gameboard: SKScene {
                         break
                 }
                 
-                doorButton.alpha = 1
-                door.alpha = 1
+                //doorButton.alpha = 1
+                //door.alpha = 1
                 
                 rando = Int(arc4random_uniform(UInt32(currentThemeNames.count)))
                 let themeName = currentThemeNames.remove(at: rando)
