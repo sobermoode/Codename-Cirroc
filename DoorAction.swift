@@ -9,13 +9,16 @@
 import SpriteKit
 
 struct DoorAction {
-    static func fadeOut() -> SKAction {
-        return SKAction.fadeOut(withDuration: 0.4)
+    static func fadeOut(_ sender: SKSpriteNode) -> SKAction {
+        return SKAction.run {
+            //node.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            sender.run(SKAction.fadeOut(withDuration: 0.4))
+        }
+        //return SKAction.fadeOut(withDuration: 0.4)
     }
     
     static func slideUp(_ sender: SKSpriteNode) -> SKAction {
         return SKAction.run {
-            print("slide up")
             sender.anchorPoint = CGPoint(x: 0.5, y: 1)
             sender.position.y += sender.calculateAccumulatedFrame().height / 2
             sender.run(SKAction.scaleY(to: 0, duration: 0.4))
@@ -26,6 +29,8 @@ struct DoorAction {
         return SKAction.run {
             print("star trek")
             let color = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1)
+            //let lColor = UIColor.blue
+            //let rColor = UIColor.green
             let leftSide = SKSpriteNode(texture: nil,
                                         color: color,
                                         size: CGSize(width: sender.calculateAccumulatedFrame().width / 2,
@@ -43,13 +48,25 @@ struct DoorAction {
             rightSide.position.x += sender.calculateAccumulatedFrame().width / 2
             rightSide.zPosition = 20
             
-            sender.addChild(leftSide)
-            sender.addChild(rightSide)
+            //let halfSlide = SKAction.scaleX(to: 0, duration: 0.4)
+            //let open = SKAction.group([sender.childNode(withName: "leftSide")!.run(halfSlide), sender.childNode(withName: "rightSide")!.run(halfSlide)])
             
-            sender.childNode(withName: "leftSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
-            sender.childNode(withName: "rightSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
-            sender.childNode(withName: "leftSide")!.removeFromParent()
-            sender.childNode(withName: "rightSide")!.removeFromParent()
+            sender.parent!.addChild(leftSide)
+            sender.parent!.addChild(rightSide)
+            
+            sender.alpha = 0
+            sender.parent!.childNode(withName: "leftSide")!.alpha = 1
+            sender.parent!.childNode(withName: "rightSide")!.alpha = 1
+            sender.parent!.childNode(withName: "leftSide")!.run(SKAction.scaleX(to: 0, duration: 0.4))
+            sender.parent!.childNode(withName: "rightSide")!.run(SKAction.scaleX(to: 0, duration: 0.4)) {
+                //sender.removeFromParent()
+            }
+            
+            /*sender.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
+                                          SKAction.run { sender.removeFromParent() } ]))*/
+            //sender.removeFromParent()
+            //sender.childNode(withName: "leftSide")!.removeFromParent()
+            //sender.childNode(withName: "rightSide")!.removeFromParent()
         }
     }
     
@@ -60,7 +77,7 @@ struct DoorAction {
         
         switch Int(arc4random_uniform(maxActions)) {
             case 0:
-                action = DoorAction.fadeOut()
+                action = DoorAction.fadeOut(sender)
             
             case 1:
                 action = DoorAction.slideUp(sender)

@@ -56,7 +56,8 @@ extension DoorButton: ButtonNode {
         })*/
         
         let door = parent!.childNode(withName: "door") as! SKSpriteNode
-        door.run(DoorAction.rando(door))
+        let randoAction = DoorAction.rando(door)
+        door.run(randoAction)
         //door!.run(doorAction.rando())
         //door = nil
         //door!.removeFromParent()
