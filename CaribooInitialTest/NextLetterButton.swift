@@ -18,7 +18,7 @@ class NextLetterButton: SKSpriteNode {
 }
 
 extension NextLetterButton: ButtonNode {
-    func buttonPress(_ pressedButton: ButtonNode) {
+    func buttonPress(_ pressedButton: SKNode) {
         let nextLetter = LetterSprite()
         
         guard parent != nil else {

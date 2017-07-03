@@ -30,7 +30,7 @@ extension StartButton {
 }
 
 extension StartButton: ButtonNode {
-    func buttonPress(_ pressedButton: ButtonNode) {
+    func buttonPress(_ pressedButton: SKNode) {
         switch mode {
             case .startMode:
                 if let cover = scene!.childNode(withName: "cover") {

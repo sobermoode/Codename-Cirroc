@@ -19,8 +19,24 @@ class Gameboard: SKScene {
         var currentThemeNames = currentThemeTextures.textureNames
         
         let pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
+        //var mutableBoxes = pictureBoxes as [AnyObject]
         for box in pictureBoxes {
-            if let actual = box.actual() {
+            if let newPictureBox = SKScene(fileNamed: "PictureBox") {
+                //print("newPictureBox:", newPictureBox)
+                //print("children:", newPictureBox.children)
+                box.removeAllChildren() //newPictureBox as? PictureBox
+                for child in newPictureBox.children {
+                    let newChild = child.copy() as! SKNode
+                    child.removeFromParent()
+                    // newChild.alpha = 1
+                    box.addChild(newChild)
+                }
+            } else {
+                print("couldn't reset the box.")
+            }
+        }
+        
+            /*if let actual = box.actual() {
                 //let contents = actual.children
                 let doorButton = actual.childNode(withName: "doorButton") as! DoorButton //contents[0] as! DoorButton
                 let door = actual.childNode(withName: "door") as! SKSpriteNode //contents[1] as! SKSpriteNode
@@ -76,6 +92,6 @@ class Gameboard: SKScene {
         oscar1.run(SKAction.moveTo(x: frame.minX - (calculateAccumulatedFrame().width / 2), duration: 0.4))
         
         let oscar2 = childNode(withName: "oscar2")!
-        oscar2.run(SKAction.fadeOut(withDuration: 0.4))
+        oscar2.run(SKAction.fadeOut(withDuration: 0.4))*/
     }
 }
