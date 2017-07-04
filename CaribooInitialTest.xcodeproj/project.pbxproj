@@ -30,6 +30,19 @@
 		81EBC1BA1F0197F5003DEC56 /* DoorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBC1B91F0197F5003DEC56 /* DoorButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		81CD56BA1F0AA4B600FA4444 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		811549941EFB77AE00E8DFD9 /* CaribooInitialTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaribooInitialTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811549971EFB77AE00E8DFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +192,7 @@
 				811549901EFB77AE00E8DFD9 /* Sources */,
 				811549911EFB77AE00E8DFD9 /* Frameworks */,
 				811549921EFB77AE00E8DFD9 /* Resources */,
+				81CD56BA1F0AA4B600FA4444 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
