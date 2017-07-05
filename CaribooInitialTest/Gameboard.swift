@@ -12,7 +12,6 @@ class Gameboard: SKScene {
     
     var themeName: String!
     var currentThemeTextures, coinTextures: SKTextureAtlas!
-    var coinsAt = [Int]()
     
     override func didMove(to view: SKView) {
         guard themeName != nil else {
