@@ -33,9 +33,17 @@ extension DoorButton: ButtonNode {
     func buttonPress(_ pressedButton: SKNode) {
         pressedButton.alpha = 0
         
-        let door = parent!.childNode(withName: "door") as! SKSpriteNode
+        let pictureBox = parent!
+        
+        let door = pictureBox.childNode(withName: "door") as! SKSpriteNode
         let randoAction = DoorAction.rando(door)
         door.run(randoAction)
+        
+        let coin = pictureBox.childNode(withName: "coin") as! SKSpriteNode
+        if coin.texture != nil {
+            let gameboard = parent!.parent!.scene as! Gameboard
+            gameboard.findCoinAtPictureBox(pictureBox.name!)
+        }
         
         let rando = arc4random_uniform(10) + 1
         if rando < 3 || rando == 10 {

@@ -48,6 +48,10 @@ class Gameboard: SKScene {
                 pictureBoxes.remove(at: rando)
             }
         }
+        
+        for box in pictureBoxes {
+            box.childNode(withName: "coin")!.alpha = 0
+        }
     }
     
     private func createPictureBoxes() {
@@ -79,5 +83,9 @@ class Gameboard: SKScene {
         
         let oscar2 = childNode(withName: "oscar2")!
         oscar2.run(SKAction.fadeOut(withDuration: 0.4))
+    }
+    
+    func findCoinAtPictureBox(_ pictureBox: String) {
+        print("found a coin!!!")
     }
 }
