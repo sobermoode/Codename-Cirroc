@@ -12,6 +12,7 @@ class Gameboard: SKScene {
     
     var themeName: String!
     var currentThemeTextures, coinTextures: SKTextureAtlas!
+    var foundCoins = 0
     
     override func didMove(to view: SKView) {
         guard themeName != nil else {
@@ -28,6 +29,7 @@ class Gameboard: SKScene {
         
         preloadImages()
         createPictureBoxes()
+        resetTreasureZone()
     }
     
     private func preloadImages() {
@@ -85,7 +87,45 @@ class Gameboard: SKScene {
         oscar2.run(SKAction.fadeOut(withDuration: 0.4))
     }
     
-    func findCoinAtPictureBox(_ pictureBox: String) {
-        print("found a coin!!!")
+    private func resetTreasureZone() {
+        let treasureZone = childNode(withName: "treasureZone") as! SKReferenceNode
+        
+        if let actual = treasureZone.actual() {
+            for number in 1...5 {
+                let coin = actual.childNode(withName: "coin" + String(number))!
+                coin.run(SKAction.setTexture(SKTexture(imageNamed: "coinGray")))
+            }
+        } else {
+            print("couldn't reset the treasure zone.")
+        }
+        
+        foundCoins = 0
+    }
+    
+    func findCoinAtPictureBox(_ pictureBoxName: String) {
+        let pictureBox = childNode(withName: "//" + pictureBoxName)!
+        let coin = pictureBox.childNode(withName: "coin")!
+        
+        foundCoins += 1
+        
+        var destination = CGPoint.zero
+        var moveToDestination = SKAction.move(to: convert(destination, to: pictureBox), duration: 1.5)
+        var spin = SKAction.rotate(byAngle: CGFloat(GLKMathDegreesToRadians(360)), duration: 1.5)
+        let grow = SKAction.scale(by: 2, duration: 0.3)
+        let shrink = grow.reversed()
+        var coinAction = SKAction.sequence([SKAction.group([moveToDestination, spin]), grow, shrink])
+        
+        coin.run(coinAction) {
+            let currentCoinName = "coin" + String(self.foundCoins)
+            let currentCoinSprite = self.childNode(withName: "//" + currentCoinName)!
+            destination = self.convert(currentCoinSprite.position, from: currentCoinSprite.parent!)
+            moveToDestination = SKAction.move(to: self.convert(destination, to: pictureBox), duration: 1.5)
+            spin = SKAction.rotate(byAngle: CGFloat(GLKMathDegreesToRadians(720)), duration: 1.5)
+            coinAction = SKAction.group([moveToDestination, spin])
+            coin.run(coinAction) {
+                currentCoinSprite.run(SKAction.setTexture(SKTexture(imageNamed: currentCoinName)))
+                coin.removeFromParent()
+            }
+        }
     }
 }
