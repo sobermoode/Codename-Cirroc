@@ -22,7 +22,6 @@
 		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
-		817D72EA1F0D79E000C4AE66 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D72E91F0D79E000C4AE66 /* Coin.swift */; };
 		81BE96551F05A63F008A9638 /* Actual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BE96541F05A63F008A9638 /* Actual.swift */; };
 		81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3402B1F098EB100BAAF72 /* DoorAction.swift */; };
 		81EBC1B01F0177FC003DEC56 /* animals.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1AF1F0177FC003DEC56 /* animals.atlas */; };
@@ -66,7 +65,6 @@
 		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
-		817D72E91F0D79E000C4AE66 /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		81BE96541F05A63F008A9638 /* Actual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actual.swift; sourceTree = "<group>"; };
 		81E3402B1F098EB100BAAF72 /* DoorAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorAction.swift; path = ../DoorAction.swift; sourceTree = "<group>"; };
 		81EBC1AF1F0177FC003DEC56 /* animals.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = animals.atlas; path = ../animals.atlas; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				81BE96571F05A817008A9638 /* Doors */,
 				817D72E81F0D781300C4AE66 /* Buttons */,
 				812D902D1F01B371001B7053 /* Oscar.swift */,
-				817D72E91F0D79E000C4AE66 /* Coin.swift */,
 				81BE96541F05A63F008A9638 /* Actual.swift */,
 			);
 			name = Implementation;
@@ -302,7 +299,6 @@
 				812D90321F02F5FC001B7053 /* StartButton.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
 				81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */,
-				817D72EA1F0D79E000C4AE66 /* Coin.swift in Sources */,
 				81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,

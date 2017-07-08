@@ -103,15 +103,13 @@ class Gameboard: SKScene {
     }
     
     func findCoinAtPictureBox(_ pictureBoxName: String) {
-        /*enumerateChildNodes(withName: "*") { node, boole in
-            node.isUserInteractionEnabled = false
-        }*/
-        
-        let cover = childNode(withName: "cover")!
-        cover.alpha = 0.65
+        let clearCover = SKSpriteNode(texture: nil, color: .clear, size: UIScreen.main.bounds.size)
+        clearCover.zPosition = 50
+        addChild(clearCover)
         
         let pictureBox = childNode(withName: "//" + pictureBoxName)!
         let coin = pictureBox.childNode(withName: "coin")!
+        coin.zPosition = 51
         
         foundCoins += 1
         
@@ -125,17 +123,16 @@ class Gameboard: SKScene {
         coin.run(coinAction) {
             let currentCoinName = "coin" + String(self.foundCoins)
             let currentCoinSprite = self.childNode(withName: "//" + currentCoinName)!
+            
             destination = self.convert(currentCoinSprite.position, from: currentCoinSprite.parent!)
             moveToDestination = SKAction.move(to: self.convert(destination, to: pictureBox), duration: 1.5)
             spin = SKAction.rotate(byAngle: CGFloat(GLKMathDegreesToRadians(720)), duration: 1.5)
             coinAction = SKAction.group([moveToDestination, spin])
+            
             coin.run(coinAction) {
                 currentCoinSprite.run(SKAction.setTexture(SKTexture(imageNamed: currentCoinName)))
                 coin.removeFromParent()
-                /*self.enumerateChildNodes(withName: "*") { node, boole in
-                    node.isUserInteractionEnabled = true
-                }*/
-                cover.alpha = 0
+                clearCover.removeFromParent()
             }
         }
     }
