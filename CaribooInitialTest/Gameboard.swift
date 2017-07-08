@@ -103,6 +103,13 @@ class Gameboard: SKScene {
     }
     
     func findCoinAtPictureBox(_ pictureBoxName: String) {
+        /*enumerateChildNodes(withName: "*") { node, boole in
+            node.isUserInteractionEnabled = false
+        }*/
+        
+        let cover = childNode(withName: "cover")!
+        cover.alpha = 0.65
+        
         let pictureBox = childNode(withName: "//" + pictureBoxName)!
         let coin = pictureBox.childNode(withName: "coin")!
         
@@ -125,6 +132,10 @@ class Gameboard: SKScene {
             coin.run(coinAction) {
                 currentCoinSprite.run(SKAction.setTexture(SKTexture(imageNamed: currentCoinName)))
                 coin.removeFromParent()
+                /*self.enumerateChildNodes(withName: "*") { node, boole in
+                    node.isUserInteractionEnabled = true
+                }*/
+                cover.alpha = 0
             }
         }
     }

@@ -34,9 +34,12 @@ extension StartButton: ButtonNode {
         switch mode {
             case .startMode:
                 if let cover = scene!.childNode(withName: "cover") {
-                    cover.removeFromParent()
+                    //cover.removeFromParent()
+                    cover.alpha = 0
+                    cover.isUserInteractionEnabled = false
                 }
                 
+                zPosition = 2
                 run(SKAction.setTexture(SKTexture(imageNamed: "restartButton")))
                 
                 mode = .restartMode
