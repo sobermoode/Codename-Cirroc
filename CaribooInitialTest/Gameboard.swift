@@ -13,6 +13,7 @@ class Gameboard: SKScene {
     var themeName: String!
     var currentThemeTextures, coinTextures: SKTextureAtlas!
     var foundCoins = 0
+    var starParticles: SKEmitterNode!
     
     override func didMove(to view: SKView) {
         guard themeName != nil else {
@@ -30,6 +31,17 @@ class Gameboard: SKScene {
         preloadImages()
         createPictureBoxes()
         resetTreasureZone()
+        
+        if let emitterReference = childNode(withName: "starParticles") as? SKReferenceNode {
+            if let emitter = emitterReference.actual() as? SKEmitterNode {
+                //print("emitter:", emitter)
+                starParticles = emitter
+            } else {
+                print("couldn't get the emitter actual...")
+            }
+        } else {
+            print("couldn't get the star particles reference node...")
+        }
     }
     
     private func preloadImages() {
@@ -113,6 +125,13 @@ class Gameboard: SKScene {
         
         foundCoins += 1
         
+        let emitterPosition = convert(pictureBox.position, from: pictureBox.parent!)
+        let emitter = SKEmitterNode(fileNamed: "StarParticles.sks")!
+        emitter.position = emitterPosition
+        emitter.particleBirthRate = 150
+        addChild(emitter)
+        emitter.advanceSimulationTime(1)
+        
         var destination = CGPoint.zero
         var moveToDestination = SKAction.move(to: convert(destination, to: pictureBox), duration: 1.5)
         var spin = SKAction.rotate(byAngle: CGFloat(GLKMathDegreesToRadians(360)), duration: 1.5)
@@ -133,6 +152,8 @@ class Gameboard: SKScene {
                 currentCoinSprite.run(SKAction.setTexture(SKTexture(imageNamed: currentCoinName)))
                 coin.removeFromParent()
                 clearCover.removeFromParent()
+                //self.starParticles.particleBirthRate = 0
+                emitter.removeFromParent()
             }
         }
     }
