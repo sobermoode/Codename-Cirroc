@@ -121,6 +121,7 @@ class Gameboard: SKScene {
         
         let pictureBox = childNode(withName: "//" + pictureBoxName)!
         let coin = pictureBox.childNode(withName: "coin")!
+        coin.alpha = 1
         coin.zPosition = 51
         
         foundCoins += 1

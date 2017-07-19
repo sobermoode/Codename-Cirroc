@@ -15,6 +15,14 @@ struct DoorAction {
         }
     }
     
+    static func fadeToGray(_ sender: SKSpriteNode) -> SKAction {
+        return SKAction.run {
+            sender.run(SKAction.colorize(with: .darkGray,
+                                         colorBlendFactor: 1,
+                                         duration: 0.3))
+        }
+    }
+    
     static func slideUp(_ sender: SKSpriteNode) -> SKAction {
         return SKAction.run {
             sender.anchorPoint = CGPoint(x: 0.5, y: 1)

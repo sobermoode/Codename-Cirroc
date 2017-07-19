@@ -34,10 +34,8 @@ extension DoorButton: ButtonNode {
         pressedButton.alpha = 0
         
         let pictureBox = parent!
-        
-        let door = pictureBox.childNode(withName: "door") as! SKSpriteNode
-        let randoAction = DoorAction.rando(door)
-        door.run(randoAction)
+        let picture = pictureBox.childNode(withName: "picture") as! SKSpriteNode
+        picture.run(DoorAction.fadeToGray(picture))
         
         let coin = pictureBox.childNode(withName: "coin") as! SKSpriteNode
         if coin.texture != nil {
