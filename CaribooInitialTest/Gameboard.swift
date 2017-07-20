@@ -170,7 +170,7 @@ class Gameboard: SKScene {
 
 extension Gameboard: SettingsDelegate {
     func didPressSettingsButton() {
-        let settingsScene = SKScene(fileNamed: "Options") as! Settings
+        let settingsScene = SKScene(fileNamed: "Settings") as! Settings
         settingsScene.previousScene = self
         settingsScene.sceneView = view!
         settingsScene.setBackDelegate()
