@@ -14,13 +14,19 @@ class Gameboard: SKScene {
     var currentThemeTextures, coinTextures: SKTextureAtlas!
     var foundCoins = 0
     var starParticles: SKEmitterNode!
+    var didLeave = false
     
     override func didMove(to view: SKView) {
         guard themeName != nil else {
             fatalError("The themeName isn't set!!!")
         }
         
-        setup()
+        if didLeave {
+            didLeave = false
+        } else {
+            setup()
+        }
+        
     }
     
     func setup() {
@@ -31,6 +37,9 @@ class Gameboard: SKScene {
         preloadImages()
         createPictureBoxes()
         resetTreasureZone()
+        
+        let settingsButton = childNode(withName: "settingsButton") as! SettingsButton
+        settingsButton.delegate = self
         
         if let emitterReference = childNode(withName: "starParticles") as? SKReferenceNode {
             if let emitter = emitterReference.actual() as? SKEmitterNode {
@@ -153,9 +162,21 @@ class Gameboard: SKScene {
                 currentCoinSprite.run(SKAction.setTexture(SKTexture(imageNamed: currentCoinName)))
                 coin.removeFromParent()
                 clearCover.removeFromParent()
-                //self.starParticles.particleBirthRate = 0
                 emitter.removeFromParent()
             }
         }
+    }
+}
+
+extension Gameboard: SettingsDelegate {
+    func didPressSettingsButton() {
+        let settingsScene = SKScene(fileNamed: "Options") as! Settings
+        settingsScene.previousScene = self
+        settingsScene.sceneView = view!
+        settingsScene.setBackDelegate()
+        
+        didLeave = true
+        
+        view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
     }
 }

@@ -30,6 +30,10 @@
 		81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBC1B71F019502003DEC56 /* PictureBox.swift */; };
 		81EBC1BA1F0197F5003DEC56 /* DoorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBC1B91F0197F5003DEC56 /* DoorButton.swift */; };
 		81EDE7591F2001C200C8D140 /* Options.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81EDE7581F2001C200C8D140 /* Options.sks */; };
+		81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75A1F20055F00C8D140 /* SettingsButton.swift */; };
+		81EDE75D1F20147700C8D140 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75C1F20147700C8D140 /* BackButton.swift */; };
+		81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75E1F20413B00C8D140 /* Settings.swift */; };
+		81EDE7611F204A0C00C8D140 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE7601F204A0C00C8D140 /* SettingsVC.swift */; };
 		81F1667C1F0C3369007A65FC /* coins.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81F1667B1F0C3369007A65FC /* coins.atlas */; };
 		81F1667E1F0D5FCA007A65FC /* TreasureZone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81F1667D1F0D5FCA007A65FC /* TreasureZone.sks */; };
 		81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1667F1F0D5FFC007A65FC /* TreasureZone.swift */; };
@@ -75,6 +79,10 @@
 		81EBC1B71F019502003DEC56 /* PictureBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBox.swift; sourceTree = "<group>"; };
 		81EBC1B91F0197F5003DEC56 /* DoorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorButton.swift; sourceTree = "<group>"; };
 		81EDE7581F2001C200C8D140 /* Options.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Options.sks; sourceTree = "<group>"; };
+		81EDE75A1F20055F00C8D140 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
+		81EDE75C1F20147700C8D140 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		81EDE75E1F20413B00C8D140 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		81EDE7601F204A0C00C8D140 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		81F1667B1F0C3369007A65FC /* coins.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = coins.atlas; sourceTree = "<group>"; };
 		81F1667D1F0D5FCA007A65FC /* TreasureZone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TreasureZone.sks; sourceTree = "<group>"; };
 		81F1667F1F0D5FFC007A65FC /* TreasureZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureZone.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
+				81EDE7601F204A0C00C8D140 /* SettingsVC.swift */,
 				81EBC1B51F018BE3003DEC56 /* SKS */,
 				81EBC1B61F018BFB003DEC56 /* Implementation */,
 				81BE96591F05A91D008A9638 /* Images */,
@@ -140,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				812D90311F02F5FC001B7053 /* StartButton.swift */,
+				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
+				81EDE75C1F20147700C8D140 /* BackButton.swift */,
 				8169661B1EFD8F030059EF19 /* ButtonNode.swift */,
 			);
 			name = Buttons;
@@ -171,6 +182,7 @@
 				812D902F1F02F589001B7053 /* Gameboard.swift */,
 				81EBC1B71F019502003DEC56 /* PictureBox.swift */,
 				81F1667F1F0D5FFC007A65FC /* TreasureZone.swift */,
+				81EDE75E1F20413B00C8D140 /* Settings.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81EDE7611F204A0C00C8D140 /* SettingsVC.swift in Sources */,
 				81EBC1BA1F0197F5003DEC56 /* DoorButton.swift in Sources */,
 				81BE96551F05A63F008A9638 /* Actual.swift in Sources */,
 				8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */,
@@ -309,11 +322,14 @@
 				81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */,
 				81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
+				81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
+				81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
 				8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */,
 				812D90301F02F589001B7053 /* Gameboard.swift in Sources */,
+				81EDE75D1F20147700C8D140 /* BackButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
