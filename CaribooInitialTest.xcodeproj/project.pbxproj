@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810BCF511F21530200FDE8F5 /* animals-word.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 810BCF501F21530200FDE8F5 /* animals-word.atlas */; };
 		811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811549971EFB77AE00E8DFD9 /* AppDelegate.swift */; };
 		8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549991EFB77AE00E8DFD9 /* GameScene.sks */; };
 		8115499C1EFB77AE00E8DFD9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8115499B1EFB77AE00E8DFD9 /* Actions.sks */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		810BCF501F21530200FDE8F5 /* animals-word.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-word.atlas"; sourceTree = "<group>"; };
 		811549941EFB77AE00E8DFD9 /* CaribooInitialTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaribooInitialTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811549971EFB77AE00E8DFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		811549991EFB77AE00E8DFD9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -191,8 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
-				81F1667B1F0C3369007A65FC /* coins.atlas */,
 				81EBC1AF1F0177FC003DEC56 /* animals.atlas */,
+				810BCF501F21530200FDE8F5 /* animals-word.atlas */,
+				81F1667B1F0C3369007A65FC /* coins.atlas */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				81F1667E1F0D5FCA007A65FC /* TreasureZone.sks in Resources */,
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
 				816966201EFDB38A0059EF19 /* letters.atlas in Resources */,
+				810BCF511F21530200FDE8F5 /* animals-word.atlas in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
 				81EBC1B01F0177FC003DEC56 /* animals.atlas in Resources */,
 				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,
