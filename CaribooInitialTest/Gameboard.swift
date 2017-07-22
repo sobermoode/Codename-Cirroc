@@ -29,6 +29,11 @@ class Gameboard: SKScene {
         
     }
     
+    func changeThemeTo(_ newThemeName: String) {
+        
+        themeName = newThemeName
+    }
+    
     func setup() {
         guard themeName != nil else {
             fatalError("The themeName isn't set!!!")
@@ -51,6 +56,10 @@ class Gameboard: SKScene {
         } else {
             print("couldn't get the star particles reference node...")
         }
+    }
+    
+    func reloadImages(with newTheme: String) {
+        
     }
     
     private func preloadImages() {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		810BCF511F21530200FDE8F5 /* animals-word.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 810BCF501F21530200FDE8F5 /* animals-word.atlas */; };
+		810BCF531F21ABDB00FDE8F5 /* ModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */; };
+		810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCF541F21B14E00FDE8F5 /* Modes.swift */; };
 		811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811549971EFB77AE00E8DFD9 /* AppDelegate.swift */; };
 		8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549991EFB77AE00E8DFD9 /* GameScene.sks */; };
 		8115499C1EFB77AE00E8DFD9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8115499B1EFB77AE00E8DFD9 /* Actions.sks */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		810BCF501F21530200FDE8F5 /* animals-word.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-word.atlas"; sourceTree = "<group>"; };
+		810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeButton.swift; sourceTree = "<group>"; };
+		810BCF541F21B14E00FDE8F5 /* Modes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modes.swift; sourceTree = "<group>"; };
 		811549941EFB77AE00E8DFD9 /* CaribooInitialTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaribooInitialTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811549971EFB77AE00E8DFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		811549991EFB77AE00E8DFD9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				812D90311F02F5FC001B7053 /* StartButton.swift */,
 				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
 				81EDE75C1F20147700C8D140 /* BackButton.swift */,
+				810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */,
 				8169661B1EFD8F030059EF19 /* ButtonNode.swift */,
 			);
 			name = Buttons;
@@ -219,6 +224,7 @@
 				81BE96571F05A817008A9638 /* Doors */,
 				817D72E81F0D781300C4AE66 /* Buttons */,
 				812D902D1F01B371001B7053 /* Oscar.swift */,
+				810BCF541F21B14E00FDE8F5 /* Modes.swift */,
 				81BE96541F05A63F008A9638 /* Actual.swift */,
 			);
 			name = Implementation;
@@ -323,12 +329,14 @@
 				8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */,
 				812D90321F02F5FC001B7053 /* StartButton.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
+				810BCF531F21ABDB00FDE8F5 /* ModeButton.swift in Sources */,
 				81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */,
 				81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */,
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
 				81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
 				81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */,
+				810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
 				8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */,
