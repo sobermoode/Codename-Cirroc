@@ -10,9 +10,10 @@ import SpriteKit
 
 class Gameboard: SKScene {
     
-    var themeName: String!
-    var currentThemeTextures, coinTextures: SKTextureAtlas!
-    var foundCoins = 0
+    //var themeName: String!
+    //var currentThemeTextures, coinTextures: SKTextureAtlas!
+    //var foundCoins = 0
+    var gameManager: GameManager!
     var starParticles: SKEmitterNode!
     var didLeave = false
     
@@ -29,15 +30,12 @@ class Gameboard: SKScene {
         
     }
     
-    func changeThemeTo(_ newThemeName: String) {
-        
-        themeName = newThemeName
-    }
-    
     func setup() {
-        guard themeName != nil else {
+        /*guard themeName != nil else {
             fatalError("The themeName isn't set!!!")
-        }
+        }*/
+        
+        
         
         preloadImages()
         createPictureBoxes()
@@ -56,10 +54,6 @@ class Gameboard: SKScene {
         } else {
             print("couldn't get the star particles reference node...")
         }
-    }
-    
-    func reloadImages(with newTheme: String) {
-        
     }
     
     private func preloadImages() {

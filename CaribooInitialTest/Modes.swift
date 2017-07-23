@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct Modes {
-    static let pictures = "pictures"
-    static let words = "words"
+enum Mode: String {
+    case pictures, words
 }
