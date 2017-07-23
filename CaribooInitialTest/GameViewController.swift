@@ -17,7 +17,6 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let gameboard = SKScene(fileNamed: "Gameboard") as? Gameboard {
-                gameboard.themeName = "animals"
                 // Set the scale mode to scale to fit the window
                 gameboard.scaleMode = .aspectFill
                 

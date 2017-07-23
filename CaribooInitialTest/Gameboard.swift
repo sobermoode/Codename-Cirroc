@@ -13,14 +13,18 @@ class Gameboard: SKScene {
     //var themeName: String!
     //var currentThemeTextures, coinTextures: SKTextureAtlas!
     //var foundCoins = 0
-    var gameManager: GameManager!
+    //var gameManager: GameManager!
+    var boxTextures = SKTextureAtlas()
+    var treasureTextures = SKTextureAtlas()
     var starParticles: SKEmitterNode!
     var didLeave = false
     
     override func didMove(to view: SKView) {
-        guard themeName != nil else {
+        /*guard themeName != nil else {
             fatalError("The themeName isn't set!!!")
-        }
+        }*/
+        
+        (boxTextures, treasureTextures) = GameManager.manager.currentTextures()
         
         if didLeave {
             didLeave = false
@@ -37,7 +41,7 @@ class Gameboard: SKScene {
         
         
         
-        preloadImages()
+        //preloadImages()
         createPictureBoxes()
         resetTreasureZone()
         
@@ -56,10 +60,10 @@ class Gameboard: SKScene {
         }
     }
     
-    private func preloadImages() {
+    /*private func preloadImages() {
         currentThemeTextures = SKTextureAtlas(named: themeName!)
         coinTextures = SKTextureAtlas(named: "coins")
-    }
+    }*/
     
     private func placeCoins() {
         var pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
@@ -81,7 +85,7 @@ class Gameboard: SKScene {
     }
     
     private func createPictureBoxes() {
-        var textureNames = currentThemeTextures.textureNames
+        var textureNames = boxTextures.textureNames
         let pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
         for box in pictureBoxes {
             if let newPictureBox = SKScene(fileNamed: "PictureBox") as? PictureBox {
@@ -95,7 +99,7 @@ class Gameboard: SKScene {
                 
                 let rando = Int(arc4random_uniform(UInt32(textureNames.count)))
                 let textureName = textureNames.remove(at: rando)
-                let texture = currentThemeTextures.textureNamed(textureName)
+                let texture = boxTextures.textureNamed(textureName)
                 box.childNode(withName: "picture")!.run(SKAction.setTexture(texture))
             } else {
                 print("couldn't reset the picture box.")
@@ -123,7 +127,7 @@ class Gameboard: SKScene {
             print("couldn't reset the treasure zone.")
         }
         
-        foundCoins = 0
+        //foundCoins = 0
     }
     
     func findCoinAtPictureBox(_ pictureBoxName: String) {
@@ -136,7 +140,8 @@ class Gameboard: SKScene {
         coin.alpha = 1
         coin.zPosition = 51
         
-        foundCoins += 1
+        //foundCoins += 1
+        GameManager.manager.findCoin()
         
         let emitterPosition = convert(pictureBox.position, from: pictureBox.parent!)
         let emitter = SKEmitterNode(fileNamed: "StarParticles.sks")!
@@ -153,7 +158,7 @@ class Gameboard: SKScene {
         var coinAction = SKAction.sequence([SKAction.group([moveToDestination, spin]), grow, shrink])
         
         coin.run(coinAction) {
-            let currentCoinName = "coin" + String(self.foundCoins)
+            let currentCoinName = GameManager.manager.currentCoin //"coin" + String(self.foundCoins)
             let currentCoinSprite = self.childNode(withName: "//" + currentCoinName)!
             
             destination = self.convert(currentCoinSprite.position, from: currentCoinSprite.parent!)

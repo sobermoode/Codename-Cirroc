@@ -10,8 +10,14 @@ import SpriteKit
 
 struct GameManager {
     
-    fileprivate var defaultTheme: Theme = Themes.animals
-    fileprivate var defaultMode: Mode = .pictures
+    static var manager = GameManager()
+    
+    static let defaultTheme: Theme = Themes.animals
+    static let defaultMode: Mode = .pictures
+    
+    var currentCoin: String {
+        return "coin" + String(foundCoins)
+    }
     
     fileprivate var currentTheme: Theme
     fileprivate var currentMode: Mode
@@ -21,13 +27,13 @@ struct GameManager {
     fileprivate var activeGame = false
     
     init() {
-        currentTheme = defaultTheme
-        currentMode = defaultMode
-        boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
+        currentTheme = GameManager.defaultTheme
+        currentMode = GameManager.defaultMode
+        boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
     }
     
-    init(themeName theme: Theme!, modeType mode: Mode!) {
+    /*init(themeName theme: Theme!, modeType mode: Mode!) {
         guard theme != nil && mode != nil else {
             fatalError("init(theme:mode:) cannot be used without supplying a valid theme name!!!")
         }
@@ -36,7 +42,7 @@ struct GameManager {
         currentMode = mode
         boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
-    }
+    }*/
 }
 
 extension GameManager {
@@ -47,6 +53,14 @@ extension GameManager {
     func updateActiveGame() {
         /// if an active game exists, call after changing the theme or mode, so that the box textures
         /// update in the background, before the user exits the settings screen
+    }
+    
+    mutating func reset() {
+        foundCoins = 0
+    }
+    
+    mutating func findCoin() {
+        foundCoins += 1
     }
     
     mutating func changeTheme(to newTheme: Theme!) {
