@@ -10,10 +10,6 @@ import SpriteKit
 
 class PictureBox: SKScene {
     
-    struct Theme {
-        static let Animals = "animals"
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
