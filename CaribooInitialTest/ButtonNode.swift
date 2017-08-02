@@ -11,3 +11,7 @@ import SpriteKit
 protocol ButtonNode {
     func buttonPress(_ pressedButton: SKNode)
 }
+
+extension ButtonNode {
+    override touches
+}
