@@ -21,10 +21,16 @@ class MainMenu: SKScene {
 
 extension MainMenu: MMPlayButtonDelegate, MMSettingsButtonDelegate {
     func didPressPlayButtonMM() {
-        print("PLAY!!!")
+        let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
+        view!.presentScene(gameboard)
     }
     
     func didPressSettingsButtonMM() {
-        print("SETTINGS!!!")
+        let settingsScene = SKScene(fileNamed: "Settings") as! Settings
+        settingsScene.previousScene = self
+        settingsScene.sceneView = view!
+        settingsScene.setBackDelegate()
+        
+        view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
     }
 }
