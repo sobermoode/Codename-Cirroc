@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Gameboard: SKScene {
+class Gameboard: SKScene, SKPhysicsContactDelegate {
     
     //var themeName: String!
     //var currentThemeTextures, coinTextures: SKTextureAtlas!

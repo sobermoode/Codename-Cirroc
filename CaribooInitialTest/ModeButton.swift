@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class ModeButton: SKNode {
     
     struct modes {
@@ -27,3 +27,4 @@ class ModeButton: SKNode {
         isUserInteractionEnabled = true
     }
 }
+*/
