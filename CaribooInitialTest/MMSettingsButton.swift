@@ -10,6 +10,8 @@ import SpriteKit
 
 class MMSettingsButton: SKSpriteNode {
     
+    var delegate: MMSettingsButtonDelegate?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -30,6 +32,10 @@ extension MMSettingsButton: ButtonNode {
             return
         }
         
-        delegate.didPressSettingsButton()
+        delegate.didPressSettingsButtonMM()
     }
+}
+
+protocol MMSettingsButtonDelegate {
+    func didPressSettingsButtonMM()
 }

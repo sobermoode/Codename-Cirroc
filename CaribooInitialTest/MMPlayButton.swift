@@ -10,6 +10,8 @@ import SpriteKit
 
 class MMPlayButton: SKSpriteNode {
     
+    var delegate: MMPlayButtonDelegate?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -30,6 +32,10 @@ extension MMPlayButton: ButtonNode {
             return
         }
         
-        delegate.didPressSettingsButton()
+        delegate.didPressPlayButtonMM()
     }
+}
+
+protocol MMPlayButtonDelegate {
+    func didPressPlayButtonMM()
 }

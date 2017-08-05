@@ -16,12 +16,12 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let gameboard = SKScene(fileNamed: "Gameboard") as? Gameboard {
+            if let mainMenu = SKScene(fileNamed: "MainMenu") as? MainMenu {
                 // Set the scale mode to scale to fit the window
-                gameboard.scaleMode = .aspectFill
+                mainMenu.scaleMode = .aspectFill
                 
                 // Present the scene
-                view.presentScene(gameboard)
+                view.presentScene(mainMenu)
             }
             
             view.ignoresSiblingOrder = true
