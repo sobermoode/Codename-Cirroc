@@ -45,7 +45,8 @@ extension StartButton: ButtonNode {
                 mode = .restartMode
                 
             case .restartMode:
-                (scene as! Gameboard).setup()
+                //(scene as! Gameboard).setup()
+                GameManager.manager.reset()
         }
     }
 }

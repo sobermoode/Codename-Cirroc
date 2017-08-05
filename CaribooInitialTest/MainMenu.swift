@@ -22,6 +22,9 @@ class MainMenu: SKScene {
 extension MainMenu: MMPlayButtonDelegate, MMSettingsButtonDelegate {
     func didPressPlayButtonMM() {
         let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
+        
+        GameManager.manager.gameboard = gameboard
+        
         view!.presentScene(gameboard)
     }
     

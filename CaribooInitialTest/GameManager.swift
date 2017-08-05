@@ -24,7 +24,8 @@ struct GameManager {
     fileprivate var boxTextures, treasureTextures: SKTextureAtlas
     fileprivate var foundCoins = 0
     
-    fileprivate var activeGame = false
+    var gameboard: Gameboard?
+    //fileprivate var activeGame = false
     
     init() {
         currentTheme = GameManager.defaultTheme
@@ -56,6 +57,8 @@ extension GameManager {
     }
     
     mutating func reset() {
+        gameboard!.setup()
+        
         foundCoins = 0
     }
     
@@ -72,7 +75,7 @@ extension GameManager {
         boxTextures = SKTextureAtlas(named: newTheme + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        if activeGame {
+        if let _ = gameboard {
             updateActiveGame()
         }
     }
@@ -86,7 +89,7 @@ extension GameManager {
         boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        if activeGame {
+        if let _ = gameboard {
             updateActiveGame()
         }
     }
