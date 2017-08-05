@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Gameboard: SKScene, SKPhysicsContactDelegate {
+class Gameboard: SKScene {
     
     //var themeName: String!
     //var currentThemeTextures, coinTextures: SKTextureAtlas!
@@ -45,8 +45,8 @@ class Gameboard: SKScene, SKPhysicsContactDelegate {
         createPictureBoxes()
         resetTreasureZone()
         
-        let settingsButton = childNode(withName: "settingsButton") as! SettingsButton
-        settingsButton.delegate = self
+        //let settingsButton = childNode(withName: "settingsButton") as! SettingsButton
+        //settingsButton.delegate = self
         
         if let emitterReference = childNode(withName: "starParticles") as? SKReferenceNode {
             if let emitter = emitterReference.actual() as? SKEmitterNode {
@@ -176,7 +176,7 @@ class Gameboard: SKScene, SKPhysicsContactDelegate {
     }
 }
 
-extension Gameboard: SettingsDelegate {
+/*extension Gameboard: SettingsDelegate {
     func didPressSettingsButton() {
         let settingsScene = SKScene(fileNamed: "Settings") as! Settings
         settingsScene.previousScene = self
@@ -187,4 +187,4 @@ extension Gameboard: SettingsDelegate {
         
         view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
     }
-}
+}*/

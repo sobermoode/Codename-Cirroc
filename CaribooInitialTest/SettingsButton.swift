@@ -8,24 +8,16 @@
 
 import SpriteKit
 
-class SettingsButton: SKSpriteNode {
+class SettingsButton: ButtonSprite {
     
-    var delegate: SettingsDelegate!
+    //var delegate: SettingsDelegate!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        isUserInteractionEnabled = true
+    override func buttonPress() {
+        GameManager.manager.editSettings()
     }
 }
 
-extension SettingsButton {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        buttonPress(self)
-    }
-}
-
-extension SettingsButton: ButtonNode {
+/*extension SettingsButton: ButtonNode {
     func buttonPress(_ pressedButton: SKNode) {
         guard let delegate = delegate else {
             print("the SettingsDelegate isn't set!!!")
@@ -38,4 +30,4 @@ extension SettingsButton: ButtonNode {
 
 protocol SettingsDelegate {
     func didPressSettingsButton()
-}
+}*/

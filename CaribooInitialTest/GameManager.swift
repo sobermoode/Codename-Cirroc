@@ -24,7 +24,7 @@ struct GameManager {
     fileprivate var boxTextures, treasureTextures: SKTextureAtlas
     fileprivate var foundCoins = 0
     
-    var gameboard: Gameboard?
+    var previousScene, currentScene: SKScene?
     //fileprivate var activeGame = false
     
     init() {
@@ -51,13 +51,41 @@ extension GameManager {
         return (boxTextures, treasureTextures)
     }
     
+    mutating func play() {
+        let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
+        
+        previousScene = currentScene
+        currentScene = gameboard
+        
+        currentScene!.view!.presentScene(gameboard)
+    }
+    
+    mutating func editSettings() {
+        let settingsScene = SKScene(fileNamed: "Settings") as! Settings
+        //settingsScene.previousScene = currentScene
+        //settingsScene.sceneView = currentScene!.view!
+        //settingsScene.setBackDelegate()
+        
+        currentScene!.view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
+        
+        previousScene = currentScene
+        currentScene = settingsScene
+    }
+    
+    mutating func backToPreviousScene() {
+        currentScene!.view!.presentScene(previousScene!)
+        
+        currentScene = previousScene
+        previousScene = nil
+    }
+    
     func updateActiveGame() {
         /// if an active game exists, call after changing the theme or mode, so that the box textures
         /// update in the background, before the user exits the settings screen
     }
     
     mutating func reset() {
-        gameboard!.setup()
+        (currentScene as! Gameboard).setup()
         
         foundCoins = 0
     }
@@ -75,9 +103,9 @@ extension GameManager {
         boxTextures = SKTextureAtlas(named: newTheme + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        if let _ = gameboard {
+        /*if let _ = gameboard {
             updateActiveGame()
-        }
+        }*/
     }
     
     mutating func changeMode(to newMode: Mode!) {
@@ -89,8 +117,8 @@ extension GameManager {
         boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        if let _ = gameboard {
+        /*if let _ = gameboard {
             updateActiveGame()
-        }
+        }*/
     }
 }

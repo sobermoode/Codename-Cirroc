@@ -8,18 +8,22 @@
 
 import SpriteKit
 
-class BackButton: SKNode {
+class BackButton: ButtonSprite {
     
-    var delegate: BackDelegate!
+    /*var delegate: BackDelegate!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         isUserInteractionEnabled = true
+    }*/
+    
+    override func buttonPress() {
+        GameManager.manager.backToPreviousScene()
     }
 }
 
-extension BackButton {
+/*extension BackButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         buttonPress(self)
     }
@@ -38,4 +42,4 @@ extension BackButton: ButtonNode {
 
 protocol BackDelegate {
     func dismissScene()
-}
+}*/

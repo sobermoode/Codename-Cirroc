@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class NextLetterButton: SKSpriteNode {
+/*class NextLetterButton: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,4 +34,4 @@ extension NextLetterButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         buttonPress(self)
     }
-}
+}*/

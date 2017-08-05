@@ -32,7 +32,7 @@
 		81E19B721F256AA4002F70E5 /* animals-words.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B701F256AA4002F70E5 /* animals-words.atlas */; };
 		81E19B741F26554F002F70E5 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B731F26554F002F70E5 /* MainMenu.sks */; };
 		81E19B761F26558B002F70E5 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B751F26558B002F70E5 /* MainMenu.swift */; };
-		81E19B781F269AA7002F70E5 /* MMPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B771F269AA7002F70E5 /* MMPlayButton.swift */; };
+		81E19B781F269AA7002F70E5 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B771F269AA7002F70E5 /* PlayButton.swift */; };
 		81E19B7A1F269AB5002F70E5 /* MMSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */; };
 		81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3402B1F098EB100BAAF72 /* DoorAction.swift */; };
 		81EBC1B41F0178B4003DEC56 /* PictureBox.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1B31F0178B3003DEC56 /* PictureBox.sks */; };
@@ -90,7 +90,7 @@
 		81E19B701F256AA4002F70E5 /* animals-words.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-words.atlas"; sourceTree = "<group>"; };
 		81E19B731F26554F002F70E5 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		81E19B751F26558B002F70E5 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		81E19B771F269AA7002F70E5 /* MMPlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMPlayButton.swift; sourceTree = "<group>"; };
+		81E19B771F269AA7002F70E5 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSettingsButton.swift; sourceTree = "<group>"; };
 		81E19B7B1F26A04F002F70E5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		81E3402B1F098EB100BAAF72 /* DoorAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorAction.swift; path = ../DoorAction.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		817D72E81F0D781300C4AE66 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				81E19B771F269AA7002F70E5 /* MMPlayButton.swift */,
+				81E19B771F269AA7002F70E5 /* PlayButton.swift */,
 				81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */,
 				812D90311F02F5FC001B7053 /* RestartButton.swift */,
 				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
@@ -359,7 +359,7 @@
 				811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */,
 				81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
-				81E19B781F269AA7002F70E5 /* MMPlayButton.swift in Sources */,
+				81E19B781F269AA7002F70E5 /* PlayButton.swift in Sources */,
 				81E19B7A1F269AB5002F70E5 /* MMSettingsButton.swift in Sources */,
 				81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */,
 				810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */,

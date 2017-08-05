@@ -8,18 +8,22 @@
 
 import SpriteKit
 
-class MMPlayButton: SKSpriteNode {
+class PlayButton: ButtonSprite {
     
-    var delegate: MMPlayButtonDelegate?
+    /*var delegate: MMPlayButtonDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         isUserInteractionEnabled = true
+    }*/
+    
+    override func buttonPress() {
+        GameManager.manager.play()
     }
 }
 
-extension MMPlayButton {
+/*extension MMPlayButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         buttonPress(self)
     }
@@ -38,4 +42,4 @@ extension MMPlayButton: ButtonNode {
 
 protocol MMPlayButtonDelegate {
     func didPressPlayButtonMM()
-}
+}*/

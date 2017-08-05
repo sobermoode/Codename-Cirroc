@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class MMSettingsButton: SKSpriteNode {
+/*class MMSettingsButton: SKSpriteNode {
     
     var delegate: MMSettingsButtonDelegate?
     
@@ -38,4 +38,4 @@ extension MMSettingsButton: ButtonNode {
 
 protocol MMSettingsButtonDelegate {
     func didPressSettingsButtonMM()
-}
+}*/

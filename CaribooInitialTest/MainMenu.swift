@@ -11,15 +11,17 @@ import SpriteKit
 class MainMenu: SKScene {
     
     override func didMove(to view: SKView) {
-        let playButtonMM = childNode(withName: "playButtonMM") as! MMPlayButton
-        let settingsButtonMM = childNode(withName: "settingsButtonMM") as! MMSettingsButton
+        GameManager.manager.currentScene = self
         
-        playButtonMM.delegate = self
-        settingsButtonMM.delegate = self
+        //let playButton = childNode(withName: "playButton") as! PlayButton
+        //let settingsButton = childNode(withName: "settingsButtonMM") as! SettingsButton
+        
+        //playButton.delegate = self
+        //settingsButton.delegate = self
     }
 }
 
-extension MainMenu: MMPlayButtonDelegate, MMSettingsButtonDelegate {
+/*extension MainMenu: MMPlayButtonDelegate, MMSettingsButtonDelegate {
     func didPressPlayButtonMM() {
         let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
         
@@ -36,4 +38,4 @@ extension MainMenu: MMPlayButtonDelegate, MMSettingsButtonDelegate {
         
         view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
     }
-}
+}*/

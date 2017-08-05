@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class DoorButton: SKSpriteNode {
+/*class DoorButton: SKSpriteNode {
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
@@ -72,4 +72,4 @@ extension DoorButton: ButtonNode {
             }
         }
     }
-}
+} */

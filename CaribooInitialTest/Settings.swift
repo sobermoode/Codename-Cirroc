@@ -10,8 +10,8 @@ import SpriteKit
 
 class Settings: SKScene {
     
-    var previousScene: SKScene!
-    var sceneView: SKView!
+    //var previousScene: SKScene!
+    //var sceneView: SKView!
     
     var modeButtons = [ButtonNode]()
     
@@ -23,14 +23,14 @@ class Settings: SKScene {
         }*/
     }
     
-    func setBackDelegate() {
+    /*func setBackDelegate() {
         let backButton = childNode(withName: "../backButton") as! BackButton
         backButton.delegate = self
-    }
+    }*/
 }
 
-extension Settings: BackDelegate {
+/*extension Settings: BackDelegate {
     func dismissScene() {
         sceneView.presentScene(previousScene, transition: SKTransition.moveIn(with: .up, duration: 0.3))
     }
-}
+}*/
