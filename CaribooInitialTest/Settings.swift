@@ -18,9 +18,9 @@ class Settings: SKScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        for child in children {
+        /*for child in children {
             if child is ModeButton
-        }
+        }*/
     }
     
     func setBackDelegate() {

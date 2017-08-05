@@ -8,8 +8,38 @@
 
 import SpriteKit
 
+class ButtonSprite: SKSpriteNode {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        isUserInteractionEnabled = true
+    }
+    
+    //open func buttonPress() {}
+}
+
 protocol ButtonNode {
+    func buttonPress()
+}
+
+extension ButtonSprite {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        buttonPress()
+    }
+}
+
+extension ButtonSprite: ButtonNode {
+    func buttonPress() { }
+ }
+
+/*
+@objc protocol ButtonNode {
     func buttonPress(_ pressedButton: SKNode)
+}
+
+extension ButtonNode {
+    
 }
 
 enum GameMode: String {
@@ -29,11 +59,14 @@ protocol ModeButton: ButtonNode {
     override touches
 }*/
 
-extension SKSpriteNode: ButtonNode {
+extension SKSpriteNode {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        buttonPress(self)
-    }
-    func buttonPress(_ pressedButton: SKNode) {
-        <#code#>
+        //buttonPress(self)
+        super.touchesBegan(touches, with: event)
+        
+        if self is ButtonNode {
+            perform(#selector(ButtonNode.buttonPress), with: self)
+        }
     }
 }
+*/

@@ -8,9 +8,9 @@
 
 import SpriteKit
 
-class StartButton: SKSpriteNode {
+class RestartButton: ButtonSprite {
     
-    enum Mode: String {
+    /*enum Mode: String {
         case startMode, restartMode
     }
     
@@ -20,16 +20,20 @@ class StartButton: SKSpriteNode {
         super.init(coder: aDecoder)
         
         isUserInteractionEnabled = true
+    }*/
+    
+    override func buttonPress() {
+        GameManager.manager.reset()
     }
 }
 
-extension StartButton {
+/*extension StartButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         buttonPress(self)
     }
-}
+}*/
 
-extension StartButton: ButtonNode {
+/*extension StartButton: ButtonNode {
     func buttonPress(_ pressedButton: SKNode) {
         switch mode {
             case .startMode:
@@ -49,4 +53,4 @@ extension StartButton: ButtonNode {
                 GameManager.manager.reset()
         }
     }
-}
+}*/
