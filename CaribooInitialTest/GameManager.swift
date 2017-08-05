@@ -56,7 +56,7 @@ extension GameManager {
         
         currentScene!.view!.presentScene(gameboard)
         
-        previousScene = currentScene
+        //previousScene = currentScene
         currentScene = gameboard
     }
     
@@ -67,6 +67,9 @@ extension GameManager {
         //settingsScene.setBackDelegate()
         
         currentScene!.view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
+        if currentScene!.name == "Gameboard" {
+            (currentScene as! Gameboard).didLeave = true
+        }
         
         previousScene = currentScene
         currentScene = settingsScene

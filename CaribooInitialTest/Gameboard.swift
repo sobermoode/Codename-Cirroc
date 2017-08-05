@@ -31,7 +31,6 @@ class Gameboard: SKScene {
         } else {
             setup()
         }
-        
     }
     
     func setup() {
