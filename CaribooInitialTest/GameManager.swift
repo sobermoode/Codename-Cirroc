@@ -54,10 +54,10 @@ extension GameManager {
     mutating func play() {
         let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
         
+        currentScene!.view!.presentScene(gameboard)
+        
         previousScene = currentScene
         currentScene = gameboard
-        
-        currentScene!.view!.presentScene(gameboard)
     }
     
     mutating func editSettings() {
