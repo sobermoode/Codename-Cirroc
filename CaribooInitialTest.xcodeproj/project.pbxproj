@@ -21,7 +21,7 @@
 		812D90301F02F589001B7053 /* Gameboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902F1F02F589001B7053 /* Gameboard.swift */; };
 		812D90321F02F5FC001B7053 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D90311F02F5FC001B7053 /* RestartButton.swift */; };
 		8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816966191EFD8AB70059EF19 /* LetterSprite.swift */; };
-		8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* ButtonNode.swift */; };
+		8169661C1EFD8F030059EF19 /* SKButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* SKButtonNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
 		81BAF83E1F141D6B0001E6EF /* StarParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF83D1F141D6B0001E6EF /* StarParticles.sks */; };
@@ -33,7 +33,6 @@
 		81E19B741F26554F002F70E5 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B731F26554F002F70E5 /* MainMenu.sks */; };
 		81E19B761F26558B002F70E5 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B751F26558B002F70E5 /* MainMenu.swift */; };
 		81E19B781F269AA7002F70E5 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B771F269AA7002F70E5 /* PlayButton.swift */; };
-		81E19B7A1F269AB5002F70E5 /* MMSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */; };
 		81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3402B1F098EB100BAAF72 /* DoorAction.swift */; };
 		81EBC1B41F0178B4003DEC56 /* PictureBox.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81EBC1B31F0178B3003DEC56 /* PictureBox.sks */; };
 		81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBC1B71F019502003DEC56 /* PictureBox.swift */; };
@@ -79,7 +78,7 @@
 		812D902F1F02F589001B7053 /* Gameboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameboard.swift; sourceTree = "<group>"; };
 		812D90311F02F5FC001B7053 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
 		816966191EFD8AB70059EF19 /* LetterSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterSprite.swift; sourceTree = "<group>"; };
-		8169661B1EFD8F030059EF19 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		8169661B1EFD8F030059EF19 /* SKButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtonNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
 		81BAF83D1F141D6B0001E6EF /* StarParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarParticles.sks; sourceTree = "<group>"; };
@@ -91,8 +90,6 @@
 		81E19B731F26554F002F70E5 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		81E19B751F26558B002F70E5 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		81E19B771F269AA7002F70E5 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
-		81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSettingsButton.swift; sourceTree = "<group>"; };
-		81E19B7B1F26A04F002F70E5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		81E3402B1F098EB100BAAF72 /* DoorAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoorAction.swift; path = ../DoorAction.swift; sourceTree = "<group>"; };
 		81EBC1B31F0178B3003DEC56 /* PictureBox.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PictureBox.sks; sourceTree = "<group>"; };
 		81EBC1B71F019502003DEC56 /* PictureBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureBox.swift; sourceTree = "<group>"; };
@@ -167,14 +164,12 @@
 		817D72E81F0D781300C4AE66 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				8169661B1EFD8F030059EF19 /* SKButtonNode.swift */,
 				81E19B771F269AA7002F70E5 /* PlayButton.swift */,
-				81E19B791F269AB5002F70E5 /* MMSettingsButton.swift */,
 				812D90311F02F5FC001B7053 /* RestartButton.swift */,
 				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
 				81EDE75C1F20147700C8D140 /* BackButton.swift */,
 				810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */,
-				8169661B1EFD8F030059EF19 /* ButtonNode.swift */,
-				81E19B7B1F26A04F002F70E5 /* MyPlayground.playground */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -242,10 +237,10 @@
 				81BE96571F05A817008A9638 /* Doors */,
 				817D72E81F0D781300C4AE66 /* Buttons */,
 				812D902D1F01B371001B7053 /* Oscar.swift */,
+				81E19B6B1F23B0EC002F70E5 /* Themes.swift */,
 				810BCF541F21B14E00FDE8F5 /* Modes.swift */,
 				81BE96541F05A63F008A9638 /* Actual.swift */,
 				81E19B671F23ACD0002F70E5 /* GameManager.swift */,
-				81E19B6B1F23B0EC002F70E5 /* Themes.swift */,
 			);
 			name = Implementation;
 			sourceTree = "<group>";
@@ -360,12 +355,11 @@
 				81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */,
 				8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */,
 				81E19B781F269AA7002F70E5 /* PlayButton.swift in Sources */,
-				81E19B7A1F269AB5002F70E5 /* MMSettingsButton.swift in Sources */,
 				81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */,
 				810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
-				8169661C1EFD8F030059EF19 /* ButtonNode.swift in Sources */,
+				8169661C1EFD8F030059EF19 /* SKButtonNode.swift in Sources */,
 				812D90301F02F589001B7053 /* Gameboard.swift in Sources */,
 				81EDE75D1F20147700C8D140 /* BackButton.swift in Sources */,
 			);

@@ -8,20 +8,6 @@
 
 import Foundation
 
-typealias Theme = String
-
-struct Themes {
-    
-    //static var list = Themes()
-    
-    static let animals = "animals"
-    /*static let animals = ["chicken",
-                          "cow",
-                          "dog",
-                          "duck",
-                          "elephant",
-                          "fish",
-                          "fox",
-                          "horse",
-                          "kitten"]*/
+enum GameTheme: String {
+    case animals
 }

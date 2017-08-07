@@ -10,20 +10,12 @@ import SpriteKit
 
 class Gameboard: SKScene {
     
-    //var themeName: String!
-    //var currentThemeTextures, coinTextures: SKTextureAtlas!
-    //var foundCoins = 0
-    //var gameManager: GameManager!
     var boxTextures = SKTextureAtlas()
     var treasureTextures = SKTextureAtlas()
     var starParticles: SKEmitterNode!
     var didLeave = false
     
     override func didMove(to view: SKView) {
-        /*guard themeName != nil else {
-            fatalError("The themeName isn't set!!!")
-        }*/
-        
         (boxTextures, treasureTextures) = GameManager.manager.currentTextures()
         
         if didLeave {
@@ -34,22 +26,11 @@ class Gameboard: SKScene {
     }
     
     func setup() {
-        /*guard themeName != nil else {
-            fatalError("The themeName isn't set!!!")
-        }*/
-        
-        
-        
-        //preloadImages()
         createPictureBoxes()
         resetTreasureZone()
         
-        //let settingsButton = childNode(withName: "settingsButton") as! SettingsButton
-        //settingsButton.delegate = self
-        
         if let emitterReference = childNode(withName: "starParticles") as? SKReferenceNode {
             if let emitter = emitterReference.actual() as? SKEmitterNode {
-                //print("emitter:", emitter)
                 starParticles = emitter
             } else {
                 print("couldn't get the emitter actual...")
@@ -58,11 +39,6 @@ class Gameboard: SKScene {
             print("couldn't get the star particles reference node...")
         }
     }
-    
-    /*private func preloadImages() {
-        currentThemeTextures = SKTextureAtlas(named: themeName!)
-        coinTextures = SKTextureAtlas(named: "coins")
-    }*/
     
     private func placeCoins() {
         var pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
@@ -125,8 +101,6 @@ class Gameboard: SKScene {
         } else {
             print("couldn't reset the treasure zone.")
         }
-        
-        //foundCoins = 0
     }
     
     func findCoinAtPictureBox(_ pictureBoxName: String) {
@@ -139,7 +113,6 @@ class Gameboard: SKScene {
         coin.alpha = 1
         coin.zPosition = 51
         
-        //foundCoins += 1
         GameManager.manager.findCoin()
         
         let emitterPosition = convert(pictureBox.position, from: pictureBox.parent!)
@@ -174,16 +147,3 @@ class Gameboard: SKScene {
         }
     }
 }
-
-/*extension Gameboard: SettingsDelegate {
-    func didPressSettingsButton() {
-        let settingsScene = SKScene(fileNamed: "Settings") as! Settings
-        settingsScene.previousScene = self
-        settingsScene.sceneView = view!
-        settingsScene.setBackDelegate()
-        
-        didLeave = true
-        
-        view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
-    }
-}*/

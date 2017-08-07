@@ -7,24 +7,13 @@
 //
 
 import SpriteKit
-/*
-class ModeButton: SKNode {
-    
-    struct modes {
-        static let pictures = "pictures"
-        static let words = "words"
-    }
-    
-    enum GameMode: String {
-        case pictures, words
-    }
+
+class ModeButton: SKButtonNode {
     
     var mode: GameMode!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        isUserInteractionEnabled = true
+    override func buttonPress() {
+        <#code#>
     }
 }
-*/
+

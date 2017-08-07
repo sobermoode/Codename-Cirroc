@@ -10,10 +10,7 @@ import SpriteKit
 
 class Settings: SKScene {
     
-    //var previousScene: SKScene!
-    //var sceneView: SKView!
-    
-    var modeButtons = [ButtonNode]()
+    var modeButtons = [ModeButton]()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,16 +18,12 @@ class Settings: SKScene {
         /*for child in children {
             if child is ModeButton
         }*/
+        
+        let modes = GameMode.allModes
+        var modeCounter = 0
+        enumerateChildNodes(withName: "CaribooInitialTest.ModeButton") { node, stop in
+            let newButton = ModeButton(withLabel: modes[modeCounter])
+            node = newButton
+        }
     }
-    
-    /*func setBackDelegate() {
-        let backButton = childNode(withName: "../backButton") as! BackButton
-        backButton.delegate = self
-    }*/
 }
-
-/*extension Settings: BackDelegate {
-    func dismissScene() {
-        sceneView.presentScene(previousScene, transition: SKTransition.moveIn(with: .up, duration: 0.3))
-    }
-}*/

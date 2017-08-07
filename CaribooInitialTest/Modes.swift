@@ -8,6 +8,10 @@
 
 import Foundation
 
-enum Mode: String {
+enum GameMode: String {
     case pictures, words
+    
+    static var allModes: [String] {
+        return ["pictures", "words"]
+    }
 }

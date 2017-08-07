@@ -12,38 +12,25 @@ struct GameManager {
     
     static var manager = GameManager()
     
-    static let defaultTheme: Theme = Themes.animals
-    static let defaultMode: Mode = .pictures
+    static let defaultTheme: GameTheme = .animals
+    static let defaultMode: GameMode = .pictures
     
+    var previousScene, currentScene: SKScene?
     var currentCoin: String {
         return "coin" + String(foundCoins)
     }
     
-    fileprivate var currentTheme: Theme
-    fileprivate var currentMode: Mode
+    fileprivate var currentTheme: GameTheme
+    fileprivate var currentMode: GameMode
     fileprivate var boxTextures, treasureTextures: SKTextureAtlas
     fileprivate var foundCoins = 0
-    
-    var previousScene, currentScene: SKScene?
-    //fileprivate var activeGame = false
     
     init() {
         currentTheme = GameManager.defaultTheme
         currentMode = GameManager.defaultMode
-        boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: currentTheme.rawValue + "-" + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
     }
-    
-    /*init(themeName theme: Theme!, modeType mode: Mode!) {
-        guard theme != nil && mode != nil else {
-            fatalError("init(theme:mode:) cannot be used without supplying a valid theme name!!!")
-        }
-        
-        currentTheme = theme
-        currentMode = mode
-        boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
-        treasureTextures = SKTextureAtlas(named: "coins")
-    }*/
 }
 
 extension GameManager {
@@ -56,15 +43,11 @@ extension GameManager {
         
         currentScene!.view!.presentScene(gameboard)
         
-        //previousScene = currentScene
         currentScene = gameboard
     }
     
     mutating func editSettings() {
         let settingsScene = SKScene(fileNamed: "Settings") as! Settings
-        //settingsScene.previousScene = currentScene
-        //settingsScene.sceneView = currentScene!.view!
-        //settingsScene.setBackDelegate()
         
         currentScene!.view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
         if currentScene!.name == "Gameboard" {
@@ -97,31 +80,23 @@ extension GameManager {
         foundCoins += 1
     }
     
-    mutating func changeTheme(to newTheme: Theme!) {
+    mutating func changeTheme(to newTheme: GameTheme!) {
         guard newTheme != nil else {
             fatalError("changeTheme(to:) cannot be used without supplying a valid theme name!!!")
         }
         
         currentTheme = newTheme
-        boxTextures = SKTextureAtlas(named: newTheme + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: newTheme.rawValue + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
-        
-        /*if let _ = gameboard {
-            updateActiveGame()
-        }*/
     }
     
-    mutating func changeMode(to newMode: Mode!) {
+    mutating func changeMode(to newMode: GameMode!) {
         guard newMode != nil else {
             fatalError("changeMode(to:) cannot be used without supplying a valid mode type!!!")
         }
         
         currentMode = newMode
-        boxTextures = SKTextureAtlas(named: currentTheme + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: currentTheme.rawValue + currentMode.rawValue)
         treasureTextures = SKTextureAtlas(named: "coins")
-        
-        /*if let _ = gameboard {
-            updateActiveGame()
-        }*/
     }
 }
