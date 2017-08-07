@@ -10,10 +10,18 @@ import SpriteKit
 
 class ModeButton: SKButtonNode {
     
+    override init() {
+        super.init()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     var mode: GameMode!
     
     override func buttonPress() {
-        <#code#>
+        print("buttonPress()...")
     }
 }
 

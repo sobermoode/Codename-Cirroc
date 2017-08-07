@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 class Settings: SKScene {
     
@@ -19,11 +20,15 @@ class Settings: SKScene {
             if child is ModeButton
         }*/
         
-        let modes = GameMode.allModes
+        /*let modes = GameMode.allModes
         var modeCounter = 0
         enumerateChildNodes(withName: "CaribooInitialTest.ModeButton") { node, stop in
             let newButton = ModeButton(withLabel: modes[modeCounter])
             node = newButton
-        }
+        }*/
+        
+        /*let modesTableNode = childNode(withName: "modesTableNode")!
+        let modesTable = UITableView(frame: modesTableNode.calculateAccumulatedFrame(), style: UITableViewStyle.plain)
+        view!.addSubview(modesTable)*/
     }
 }

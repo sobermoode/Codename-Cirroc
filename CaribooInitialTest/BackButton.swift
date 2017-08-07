@@ -10,6 +10,14 @@ import SpriteKit
 
 class BackButton: SKButtonNode {
     
+    override init() {
+        super.init()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func buttonPress() {
         GameManager.manager.backToPreviousScene()
     }
