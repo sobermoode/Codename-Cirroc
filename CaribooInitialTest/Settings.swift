@@ -31,4 +31,17 @@ class Settings: SKScene {
         let modesTable = UITableView(frame: modesTableNode.calculateAccumulatedFrame(), style: UITableViewStyle.plain)
         view!.addSubview(modesTable)*/
     }
+    
+    override func didMove(to view: SKView) {
+        let modesTableNode = childNode(withName: "modesTableNode")!
+        let sceneCenter = scene!.convertPoint(toView: CGPoint.zero)
+        let modesTable = UITableView(frame: CGRect(x: sceneCenter.x,
+                                                   y: sceneCenter.y,
+                                                   width: modesTableNode.calculateAccumulatedFrame().width,
+                                                   height: modesTableNode.calculateAccumulatedFrame().height),
+                                     style: UITableViewStyle.plain)
+        modesTable.center = sceneCenter
+        
+        view.addSubview(modesTable)
+    }
 }
