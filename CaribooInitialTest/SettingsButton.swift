@@ -10,10 +10,6 @@ import SpriteKit
 
 class SettingsButton: SKButtonNode {
     
-    override init() {
-        super.init()
-    }
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

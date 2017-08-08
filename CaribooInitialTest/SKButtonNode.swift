@@ -8,16 +8,25 @@
 
 import SpriteKit
 
+public enum SKButtonType: String {
+    case image, label
+    case none
+}
+
 open class SKButtonNode: SKNode {
     
-    fileprivate enum SKButtonType: String {
+    /*fileprivate enum SKButtonType: String {
         case image, label
         case none
+    }*/
+    
+    var type: SKButtonType! {
+        willSet {
+            createNode(buttonType: newValue)
+        }
     }
     
-    fileprivate var type: SKButtonType!
-    
-    override init() {
+    /*override init() {
         super.init()
     }
     
@@ -43,13 +52,33 @@ open class SKButtonNode: SKNode {
         labelNode.verticalAlignmentMode = .center
         
         addChild(labelNode)
-    }
+    }*/
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        type = .none
-        isUserInteractionEnabled = true
+        //type = .none
+        
+        //isUserInteractionEnabled = true
+        //name = "SKButtonNode-##"
+    }
+    
+    private func createNode(buttonType type: SKButtonType) {
+        switch type {
+            case .image:
+                let spriteNode = SKSpriteNode(texture: nil, color: .clear, size: CGSize.zero)
+                
+                addChild(spriteNode)
+            case .label:
+                let defaultFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+                let labelNode = SKLabelNode(fontNamed: defaultFont.fontName)
+                //labelNode.text = labelText
+                labelNode.verticalAlignmentMode = .center
+                
+                addChild(labelNode)
+            case .none:
+                return
+        }
     }
 }
 
