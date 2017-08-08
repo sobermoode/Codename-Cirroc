@@ -11,25 +11,10 @@ import UIKit
 
 class Settings: SKScene {
     
-    var modeButtons = [ModeButton]()
+    let modes = GameMode.allModes
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        /*for child in children {
-            if child is ModeButton
-        }*/
-        
-        /*let modes = GameMode.allModes
-        var modeCounter = 0
-        enumerateChildNodes(withName: "CaribooInitialTest.ModeButton") { node, stop in
-            let newButton = ModeButton(withLabel: modes[modeCounter])
-            node = newButton
-        }*/
-        
-        /*let modesTableNode = childNode(withName: "modesTableNode")!
-        let modesTable = UITableView(frame: modesTableNode.calculateAccumulatedFrame(), style: UITableViewStyle.plain)
-        view!.addSubview(modesTable)*/
     }
     
     override func didMove(to view: SKView) {
@@ -40,8 +25,34 @@ class Settings: SKScene {
                                                    width: modesTableNode.calculateAccumulatedFrame().width,
                                                    height: modesTableNode.calculateAccumulatedFrame().height),
                                      style: UITableViewStyle.plain)
+        modesTable.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
         modesTable.center = sceneCenter
         
+        modesTable.dataSource = self
+        modesTable.delegate = self
+        
+        modesTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         view.addSubview(modesTable)
+    }
+}
+
+extension Settings: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return modes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        label.center = cell.contentView.center
+        label.textColor = .white
+        label.text = modes[indexPath.row]
+        
+        cell.contentView.addSubview(label)
+        
+        return cell
     }
 }
