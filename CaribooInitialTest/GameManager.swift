@@ -12,23 +12,23 @@ struct GameManager {
     
     static var manager = GameManager()
     
-    static let defaultTheme: GameTheme = .animals
-    static let defaultMode: GameMode = .pictures
+    static let defaultTheme = GameTheme.animals
+    static let defaultMode = GameMode.pictures
     
     var previousScene, currentScene: SKScene?
     var currentCoin: String {
         return "coin" + String(foundCoins)
     }
     
-    fileprivate var currentTheme: GameTheme
-    fileprivate var currentMode: GameMode
+    fileprivate var currentTheme: String
+    fileprivate var currentMode: String
     fileprivate var boxTextures, treasureTextures: SKTextureAtlas
     fileprivate var foundCoins = 0
     
     init() {
         currentTheme = GameManager.defaultTheme
         currentMode = GameManager.defaultMode
-        boxTextures = SKTextureAtlas(named: currentTheme.rawValue + "-" + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
     }
 }
@@ -80,23 +80,27 @@ extension GameManager {
         foundCoins += 1
     }
     
-    mutating func changeTheme(to newTheme: GameTheme!) {
+    mutating func changeTheme(to newTheme: String!) {
         guard newTheme != nil else {
             fatalError("changeTheme(to:) cannot be used without supplying a valid theme name!!!")
         }
         
         currentTheme = newTheme
-        boxTextures = SKTextureAtlas(named: newTheme.rawValue + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: newTheme + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
     }
     
-    mutating func changeMode(to newMode: GameMode!) {
+    mutating func changeMode(to newMode: String!) {
         guard newMode != nil else {
-            fatalError("changeMode(to:) cannot be used without supplying a valid mode type!!!")
+            fatalError("Don't forget about a valid mode type!!! :: changeMode(to:)")
         }
         
+        print("changing mode to", newMode)
+        
         currentMode = newMode
-        boxTextures = SKTextureAtlas(named: currentTheme.rawValue + currentMode.rawValue)
+        boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
+        
+        updateActiveGame()
     }
 }

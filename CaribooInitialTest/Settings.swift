@@ -31,7 +31,8 @@ class Settings: SKScene {
         modesTable.dataSource = self
         modesTable.delegate = self
         
-        modesTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let nib = UINib(nibName: "ModeCell", bundle: Bundle.main)
+        modesTable.register(nib, forCellReuseIdentifier: "modeCell")
         
         view.addSubview(modesTable)
     }
@@ -43,16 +44,14 @@ extension Settings: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "modeCell") as! ModeCell
         cell.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        label.center = cell.contentView.center
-        label.textColor = .white
-        label.text = modes[indexPath.row]
-        
-        cell.contentView.addSubview(label)
+        cell.modeLabel.text = modes[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        GameManager.manager.changeMode(to: modes[indexPath.row])
     }
 }

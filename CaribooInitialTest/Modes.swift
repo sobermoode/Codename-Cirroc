@@ -8,10 +8,14 @@
 
 import Foundation
 
-enum GameMode: String {
-    case pictures, words
+struct GameMode {
+    
+    static let pictures = "pictures"
+    static let words = "words"
     
     static var allModes: [String] {
-        return ["pictures", "words"]
+        return [GameMode.pictures,
+                GameMode.words]
     }
+    
 }

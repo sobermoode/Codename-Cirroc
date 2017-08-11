@@ -8,6 +8,8 @@
 
 import Foundation
 
-enum GameTheme: String {
-    case animals
+struct GameTheme {
+    
+    static let animals = "animals"
+    
 }
