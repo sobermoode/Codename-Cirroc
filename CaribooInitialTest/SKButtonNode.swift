@@ -8,90 +8,43 @@
 
 import SpriteKit
 
-public enum SKButtonType: String {
+public enum ButtonType: String {
     case image, label
     case none
 }
 
-open class SKButtonNode: SKNode {
+public protocol ButtonNode {
+    //var isButton: Bool { get set }
     
-    /*fileprivate enum SKButtonType: String {
-        case image, label
-        case none
-    }*/
+    func buttonAction()
+}
+
+extension ButtonNode {
+    public func buttonAction() { }
+}
+
+class SKSpriteButton: SKSpriteNode, ButtonNode {
     
-    var type: SKButtonType! {
-        willSet {
-            createNode(buttonType: newValue)
-        }
-    }
-    
-    /*override init() {
-        super.init()
-    }
-    
-    convenience init(withImage imageName: String) {
-        self.init()
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
         
-        type = .image
         isUserInteractionEnabled = true
-        
-        let spriteNode = SKSpriteNode(imageNamed: imageName)
-        
-        addChild(spriteNode)
     }
     
-    convenience init(withLabel labelText: String) {
-        self.init()
-        
-        type = .label
-        isUserInteractionEnabled = true
-        
-        let labelNode = SKLabelNode(fontNamed: "Avenir-Next")
-        labelNode.text = labelText
-        labelNode.verticalAlignmentMode = .center
-        
-        addChild(labelNode)
-    }*/
-    
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        //type = .none
-        
-        //isUserInteractionEnabled = true
-        //name = "SKButtonNode-##"
+        isUserInteractionEnabled = true
     }
     
-    private func createNode(buttonType type: SKButtonType) {
-        switch type {
-            case .image:
-                let spriteNode = SKSpriteNode(texture: nil, color: .clear, size: CGSize.zero)
-                
-                addChild(spriteNode)
-            case .label:
-                let defaultFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-                let labelNode = SKLabelNode(fontNamed: defaultFont.fontName)
-                //labelNode.text = labelText
-                labelNode.verticalAlignmentMode = .center
-                
-                addChild(labelNode)
-            case .none:
-                return
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let _ = touches.first else {
+            print("couldn't get the touch...")
+            return
         }
+        
+        buttonAction()
     }
-}
-
-public protocol ButtonNode {
-    func buttonPress()
-}
-
-extension SKButtonNode {
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        buttonPress()
-    }
-}
-
-extension SKButtonNode: ButtonNode {
-    public func buttonPress() { }
+    
+    func buttonAction() { }
 }

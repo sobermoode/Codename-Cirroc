@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class DoorButton: SKButtonNode {
     
     override func buttonPress() {
@@ -53,3 +53,4 @@ class DoorButton: SKButtonNode {
         }
     }
 }
+*/

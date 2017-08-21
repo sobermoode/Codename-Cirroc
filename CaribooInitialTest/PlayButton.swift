@@ -8,13 +8,9 @@
 
 import SpriteKit
 
-class PlayButton: SKButtonNode {
+class PlayButton: SKSpriteButton {
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func buttonPress() {
-        GameManager.manager.play()
+    override func buttonAction() {
+        print("pressed the play button!!!")
     }
 }

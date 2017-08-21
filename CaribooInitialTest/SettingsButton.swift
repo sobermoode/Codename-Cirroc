@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class SettingsButton: SKButtonNode {
     
     required public init?(coder aDecoder: NSCoder) {
@@ -18,3 +18,4 @@ class SettingsButton: SKButtonNode {
         GameManager.manager.editSettings()
     }
 }
+*/

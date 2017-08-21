@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class ModeButton: SKButtonNode {
     
     required public init?(coder aDecoder: NSCoder) {
@@ -21,3 +21,4 @@ class ModeButton: SKButtonNode {
     }
 }
 
+*/

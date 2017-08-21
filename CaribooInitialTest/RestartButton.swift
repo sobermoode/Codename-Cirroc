@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class RestartButton: SKButtonNode {
     
     required public init?(coder aDecoder: NSCoder) {
@@ -18,3 +18,4 @@ class RestartButton: SKButtonNode {
         GameManager.manager.reset()
     }
 }
+*/

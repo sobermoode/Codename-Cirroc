@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+/*
 class BackButton: SKButtonNode {
     
     required public init?(coder aDecoder: NSCoder) {
@@ -18,3 +18,4 @@ class BackButton: SKButtonNode {
         GameManager.manager.backToPreviousScene()
     }
 }
+*/
