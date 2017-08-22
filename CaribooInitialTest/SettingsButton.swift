@@ -19,3 +19,10 @@ class SettingsButton: SKButtonNode {
     }
 }
 */
+
+class SettingsButton: SKSpriteButton {
+    
+    override func buttonAction() {
+        print("pressed the settings button!!!")
+    }
+}
