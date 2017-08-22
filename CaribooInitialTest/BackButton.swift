@@ -7,15 +7,10 @@
 //
 
 import SpriteKit
-/*
-class BackButton: SKButtonNode {
+
+class BackButton: SKSpriteButton {
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func buttonPress() {
+    override func buttonAction() {
         GameManager.manager.backToPreviousScene()
     }
 }
-*/

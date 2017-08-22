@@ -8,14 +8,7 @@
 
 import SpriteKit
 
-public enum ButtonType: String {
-    case image, label
-    case none
-}
-
 public protocol ButtonNode {
-    //var isButton: Bool { get set }
-    
     func buttonAction()
 }
 

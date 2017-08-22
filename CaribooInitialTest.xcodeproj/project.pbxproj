@@ -21,7 +21,7 @@
 		812D90301F02F589001B7053 /* Gameboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902F1F02F589001B7053 /* Gameboard.swift */; };
 		812D90321F02F5FC001B7053 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D90311F02F5FC001B7053 /* RestartButton.swift */; };
 		8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816966191EFD8AB70059EF19 /* LetterSprite.swift */; };
-		8169661C1EFD8F030059EF19 /* SKButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* SKButtonNode.swift */; };
+		8169661C1EFD8F030059EF19 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* SKSpriteNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
 		81BAF83E1F141D6B0001E6EF /* StarParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF83D1F141D6B0001E6EF /* StarParticles.sks */; };
@@ -80,7 +80,7 @@
 		812D902F1F02F589001B7053 /* Gameboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameboard.swift; sourceTree = "<group>"; };
 		812D90311F02F5FC001B7053 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
 		816966191EFD8AB70059EF19 /* LetterSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterSprite.swift; sourceTree = "<group>"; };
-		8169661B1EFD8F030059EF19 /* SKButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtonNode.swift; sourceTree = "<group>"; };
+		8169661B1EFD8F030059EF19 /* SKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
 		81BAF83D1F141D6B0001E6EF /* StarParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarParticles.sks; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		817D72E81F0D781300C4AE66 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				8169661B1EFD8F030059EF19 /* SKButtonNode.swift */,
+				8169661B1EFD8F030059EF19 /* SKSpriteNode.swift */,
 				81E19B771F269AA7002F70E5 /* PlayButton.swift */,
 				812D90311F02F5FC001B7053 /* RestartButton.swift */,
 				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
@@ -367,7 +367,7 @@
 				810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */,
 				81EBC1B81F019502003DEC56 /* PictureBox.swift in Sources */,
 				812D902E1F01B371001B7053 /* Oscar.swift in Sources */,
-				8169661C1EFD8F030059EF19 /* SKButtonNode.swift in Sources */,
+				8169661C1EFD8F030059EF19 /* SKSpriteNode.swift in Sources */,
 				812D90301F02F589001B7053 /* Gameboard.swift in Sources */,
 				81EDE75D1F20147700C8D140 /* BackButton.swift in Sources */,
 			);

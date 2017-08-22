@@ -12,6 +12,7 @@ import UIKit
 class Settings: SKScene {
     
     let modes = GameMode.allModes
+    var modesTable: UITableView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,11 +21,11 @@ class Settings: SKScene {
     override func didMove(to view: SKView) {
         let modesTableNode = childNode(withName: "modesTableNode")!
         let sceneCenter = scene!.convertPoint(toView: CGPoint.zero)
-        let modesTable = UITableView(frame: CGRect(x: sceneCenter.x,
-                                                   y: sceneCenter.y,
-                                                   width: modesTableNode.calculateAccumulatedFrame().width,
-                                                   height: modesTableNode.calculateAccumulatedFrame().height),
-                                     style: UITableViewStyle.plain)
+        modesTable = UITableView(frame: CGRect(x: sceneCenter.x,
+                                               y: sceneCenter.y,
+                                               width: modesTableNode.calculateAccumulatedFrame().width,
+                                               height: modesTableNode.calculateAccumulatedFrame().height),
+                                 style: UITableViewStyle.plain)
         modesTable.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
         modesTable.center = sceneCenter
         
@@ -35,6 +36,10 @@ class Settings: SKScene {
         modesTable.register(nib, forCellReuseIdentifier: "modeCell")
         
         view.addSubview(modesTable)
+    }
+    
+    override func willMove(from view: SKView) {
+        modesTable.removeFromSuperview()
     }
 }
 

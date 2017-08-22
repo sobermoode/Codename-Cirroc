@@ -23,6 +23,7 @@ class SettingsButton: SKButtonNode {
 class SettingsButton: SKSpriteButton {
     
     override func buttonAction() {
-        print("pressed the settings button!!!")
+        //print("pressed the settings button!!!")
+        GameManager.manager.editSettings()
     }
 }
