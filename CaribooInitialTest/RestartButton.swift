@@ -7,15 +7,11 @@
 //
 
 import SpriteKit
-/*
-class RestartButton: SKButtonNode {
+
+class RestartButton: SKSpriteButton {
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func buttonPress() {
+    override func buttonAction() {
         GameManager.manager.reset()
     }
 }
-*/
+

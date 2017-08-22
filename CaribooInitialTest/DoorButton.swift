@@ -7,10 +7,10 @@
 //
 
 import SpriteKit
-/*
-class DoorButton: SKButtonNode {
+
+class DoorButton: SKSpriteButton {
     
-    override func buttonPress() {
+    override func buttonAction() {
         self.alpha = 0
         
         let pictureBox = parent!
@@ -53,4 +53,4 @@ class DoorButton: SKButtonNode {
         }
     }
 }
-*/
+
