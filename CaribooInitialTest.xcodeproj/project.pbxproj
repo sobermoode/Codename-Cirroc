@@ -17,6 +17,7 @@
 		811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811549A41EFB77AE00E8DFD9 /* Assets.xcassets */; };
 		811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811549A61EFB77AE00E8DFD9 /* LaunchScreen.storyboard */; };
 		811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549B01EFB791E00E8DFD9 /* Gameboard.sks */; };
+		812187CF1F4CD4AF009D0094 /* modes.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 812187CE1F4CD4AF009D0094 /* modes.atlas */; };
 		812D902E1F01B371001B7053 /* Oscar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902D1F01B371001B7053 /* Oscar.swift */; };
 		812D90301F02F589001B7053 /* Gameboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D902F1F02F589001B7053 /* Gameboard.swift */; };
 		812D90321F02F5FC001B7053 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812D90311F02F5FC001B7053 /* RestartButton.swift */; };
@@ -76,6 +77,7 @@
 		811549A71EFB77AE00E8DFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811549A91EFB77AE00E8DFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811549B01EFB791E00E8DFD9 /* Gameboard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gameboard.sks; sourceTree = "<group>"; };
+		812187CE1F4CD4AF009D0094 /* modes.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = modes.atlas; sourceTree = "<group>"; };
 		812D902D1F01B371001B7053 /* Oscar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscar.swift; sourceTree = "<group>"; };
 		812D902F1F02F589001B7053 /* Gameboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameboard.swift; sourceTree = "<group>"; };
 		812D90311F02F5FC001B7053 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
+				812187CE1F4CD4AF009D0094 /* modes.atlas */,
 				81E19B6F1F256AA4002F70E5 /* animals-pictures.atlas */,
 				81E19B701F256AA4002F70E5 /* animals-words.atlas */,
 				81F1667B1F0C3369007A65FC /* coins.atlas */,
@@ -329,6 +332,7 @@
 				81E19B721F256AA4002F70E5 /* animals-words.atlas in Resources */,
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
 				816966201EFDB38A0059EF19 /* letters.atlas in Resources */,
+				812187CF1F4CD4AF009D0094 /* modes.atlas in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
 				81E19B711F256AA4002F70E5 /* animals-pictures.atlas in Resources */,
 				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,

@@ -15,24 +15,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-21-iZJ">
-                        <rect key="frame" x="130.5" y="8" width="60" height="28"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="20"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-qa-Y8T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                 <constraints>
-                    <constraint firstItem="Mno-21-iZJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9aB-ef-DXn"/>
-                    <constraint firstItem="Mno-21-iZJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="V2v-Ud-5NU"/>
+                    <constraint firstItem="EYz-qa-Y8T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5kP-h2-95A"/>
+                    <constraint firstItem="EYz-qa-Y8T" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="8BZ-h4-l0E"/>
+                    <constraint firstItem="EYz-qa-Y8T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ssk-2b-iPS"/>
+                    <constraint firstItem="EYz-qa-Y8T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ahw-r6-EIu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="modeLabel" destination="Mno-21-iZJ" id="4SJ-hS-IBZ"/>
+                <outlet property="modeImage" destination="EYz-qa-Y8T" id="dHb-aW-hUP"/>
             </connections>
         </tableViewCell>
     </objects>

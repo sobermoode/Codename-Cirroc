@@ -11,7 +11,7 @@ import UIKit
 
 class Settings: SKScene {
     
-    let modes = GameMode.allModes
+    let modes = GameManager.manager.allModes
     var modesTable: UITableView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,18 +45,21 @@ class Settings: SKScene {
 
 extension Settings: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modes.count
+        return modes.textureNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "modeCell") as! ModeCell
         cell.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
-        cell.modeLabel.text = modes[indexPath.row]
+        let mode = modes.textureNames[indexPath.row]
+        let modeTexture = modes.textureNamed(mode)
+        cell.modeImage.image = UIImage(cgImage: modeTexture.cgImage(), scale: 0.75, orientation: UIImageOrientation.up) //UIImage(cgImage: modeTexture.cgImage())
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        GameManager.manager.changeMode(to: modes[indexPath.row])
+        let mode = modes.textureNames[indexPath.row]
+        GameManager.manager.changeMode(to: mode)
     }
 }

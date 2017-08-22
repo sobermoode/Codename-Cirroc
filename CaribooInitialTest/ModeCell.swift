@@ -9,8 +9,8 @@
 import UIKit
 
 class ModeCell: UITableViewCell {
-
-    @IBOutlet weak var modeLabel: UILabel!
+    
+    @IBOutlet weak var modeImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -19,10 +19,14 @@ struct GameManager {
     var currentCoin: String {
         return "coin" + String(foundCoins)
     }
+    var allModes: SKTextureAtlas {
+        return SKTextureAtlas(named: "modes")
+    }
     
     fileprivate var currentTheme: String
     fileprivate var currentMode: String
     fileprivate var boxTextures, treasureTextures: SKTextureAtlas
+    fileprivate var modesTextures: SKTextureAtlas
     fileprivate var foundCoins = 0
     
     init() {
@@ -30,10 +34,12 @@ struct GameManager {
         currentMode = GameManager.defaultMode
         boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
+        modesTextures = SKTextureAtlas(named: "modes")
     }
 }
 
 extension GameManager {
+    
     func currentTextures() -> (boxTextures: SKTextureAtlas, treasureTextures: SKTextureAtlas) {
         return (boxTextures, treasureTextures)
     }
