@@ -72,8 +72,6 @@ extension GameManager {
     }
     
     func updateActiveGame() {
-        /// if an active game exists, call after changing the theme or mode, so that the box textures
-        /// update in the background, before the user exits the settings screen
         if previousScene!.name == "Gameboard" {
             (previousScene as! Gameboard).updateWithNewMode(currentMode)
         }
@@ -104,13 +102,10 @@ extension GameManager {
             fatalError("Don't forget about a valid mode type!!! :: changeMode(to:)")
         }
         
-        print("changing mode to", newMode)
-        
         currentMode = newMode
         boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        //updateActiveGame()
         if previousScene!.name == "Gameboard" {
             (previousScene as! Gameboard).theNewMode = newMode
         }

@@ -17,8 +17,6 @@ class Gameboard: SKScene {
     var theNewMode: String?
     
     override func didMove(to view: SKView) {
-        //(boxTextures, treasureTextures) = GameManager.manager.currentTextures()
-        
         if let newMode = theNewMode {
             updateWithNewMode(newMode)
             theNewMode = nil
@@ -33,12 +31,10 @@ class Gameboard: SKScene {
     
     func updateWithNewMode(_ newMode: String) {
         let newBoxTextures = GameManager.manager.currentTextures().boxTextures
-        print("newBoxTextures:", newBoxTextures)
         let pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
         
         for box in pictureBoxes {
             let newTextureName = box.name! + "-" + newMode + ".png"
-            print("newTextureName:", newTextureName)
             let newTexture = newBoxTextures.textureNamed(newTextureName)
             box.childNode(withName: "picture")!.run(SKAction.setTexture(newTexture))
         }
@@ -97,10 +93,8 @@ class Gameboard: SKScene {
                 let rando = Int(arc4random_uniform(UInt32(textureNames.count)))
                 let textureName = textureNames.remove(at: rando)
                 let texture = boxTextures.textureNamed(textureName)
-                print("textureName:", textureName)
                 box.childNode(withName: "picture")!.run(SKAction.setTexture(texture))
                 box.name = textureName.components(separatedBy: "-").first!
-                print("box name:", box.name!)
             } else {
                 print("couldn't reset the picture box.")
             }
@@ -155,7 +149,7 @@ class Gameboard: SKScene {
         var coinAction = SKAction.sequence([SKAction.group([moveToDestination, spin]), grow, shrink])
         
         coin.run(coinAction) {
-            let currentCoinName = GameManager.manager.currentCoin //"coin" + String(self.foundCoins)
+            let currentCoinName = GameManager.manager.currentCoin
             let currentCoinSprite = self.childNode(withName: "//" + currentCoinName)!
             
             destination = self.convert(currentCoinSprite.position, from: currentCoinSprite.parent!)

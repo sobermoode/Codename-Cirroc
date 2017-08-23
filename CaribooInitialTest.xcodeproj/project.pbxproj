@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		810BCF531F21ABDB00FDE8F5 /* ModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */; };
 		810BCF551F21B14E00FDE8F5 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCF541F21B14E00FDE8F5 /* Modes.swift */; };
 		811549981EFB77AE00E8DFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811549971EFB77AE00E8DFD9 /* AppDelegate.swift */; };
 		8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 811549991EFB77AE00E8DFD9 /* GameScene.sks */; };
@@ -44,7 +43,6 @@
 		81EDE75B1F20055F00C8D140 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75A1F20055F00C8D140 /* SettingsButton.swift */; };
 		81EDE75D1F20147700C8D140 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75C1F20147700C8D140 /* BackButton.swift */; };
 		81EDE75F1F20413B00C8D140 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE75E1F20413B00C8D140 /* Settings.swift */; };
-		81EDE7611F204A0C00C8D140 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDE7601F204A0C00C8D140 /* SettingsVC.swift */; };
 		81F1667C1F0C3369007A65FC /* coins.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81F1667B1F0C3369007A65FC /* coins.atlas */; };
 		81F1667E1F0D5FCA007A65FC /* TreasureZone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81F1667D1F0D5FCA007A65FC /* TreasureZone.sks */; };
 		81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1667F1F0D5FFC007A65FC /* TreasureZone.swift */; };
@@ -65,7 +63,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeButton.swift; sourceTree = "<group>"; };
 		810BCF541F21B14E00FDE8F5 /* Modes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modes.swift; sourceTree = "<group>"; };
 		811549941EFB77AE00E8DFD9 /* CaribooInitialTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaribooInitialTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811549971EFB77AE00E8DFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		81EDE75A1F20055F00C8D140 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		81EDE75C1F20147700C8D140 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		81EDE75E1F20413B00C8D140 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		81EDE7601F204A0C00C8D140 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		81F1667B1F0C3369007A65FC /* coins.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = coins.atlas; sourceTree = "<group>"; };
 		81F1667D1F0D5FCA007A65FC /* TreasureZone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TreasureZone.sks; sourceTree = "<group>"; };
 		81F1667F1F0D5FFC007A65FC /* TreasureZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureZone.swift; sourceTree = "<group>"; };
@@ -144,10 +140,7 @@
 		811549961EFB77AE00E8DFD9 /* CaribooInitialTest */ = {
 			isa = PBXGroup;
 			children = (
-				81EC864C1F3E495A00C37D95 /* ModeCell.swift */,
-				81EC864D1F3E495A00C37D95 /* ModeCell.xib */,
 				8115499F1EFB77AE00E8DFD9 /* GameViewController.swift */,
-				81EDE7601F204A0C00C8D140 /* SettingsVC.swift */,
 				81EBC1B51F018BE3003DEC56 /* SKS */,
 				81EBC1B61F018BFB003DEC56 /* Implementation */,
 				81BE96591F05A91D008A9638 /* Images */,
@@ -177,7 +170,6 @@
 				812D90311F02F5FC001B7053 /* RestartButton.swift */,
 				81EDE75A1F20055F00C8D140 /* SettingsButton.swift */,
 				81EDE75C1F20147700C8D140 /* BackButton.swift */,
-				810BCF521F21ABDB00FDE8F5 /* ModeButton.swift */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -248,6 +240,8 @@
 				812D902D1F01B371001B7053 /* Oscar.swift */,
 				81E19B6B1F23B0EC002F70E5 /* Themes.swift */,
 				810BCF541F21B14E00FDE8F5 /* Modes.swift */,
+				81EC864C1F3E495A00C37D95 /* ModeCell.swift */,
+				81EC864D1F3E495A00C37D95 /* ModeCell.xib */,
 				81BE96541F05A63F008A9638 /* Actual.swift */,
 				81E19B671F23ACD0002F70E5 /* GameManager.swift */,
 			);
@@ -350,7 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EDE7611F204A0C00C8D140 /* SettingsVC.swift in Sources */,
 				81EBC1BA1F0197F5003DEC56 /* DoorButton.swift in Sources */,
 				81BE96551F05A63F008A9638 /* Actual.swift in Sources */,
 				8169661A1EFD8AB70059EF19 /* LetterSprite.swift in Sources */,
@@ -358,7 +351,6 @@
 				81E19B6C1F23B0EC002F70E5 /* Themes.swift in Sources */,
 				81EC864E1F3E495A00C37D95 /* ModeCell.swift in Sources */,
 				811549A01EFB77AE00E8DFD9 /* GameViewController.swift in Sources */,
-				810BCF531F21ABDB00FDE8F5 /* ModeButton.swift in Sources */,
 				81E3402C1F098EB100BAAF72 /* DoorAction.swift in Sources */,
 				81F166801F0D5FFC007A65FC /* TreasureZone.swift in Sources */,
 				81E19B681F23ACD0002F70E5 /* GameManager.swift in Sources */,

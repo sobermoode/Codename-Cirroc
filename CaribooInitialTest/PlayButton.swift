@@ -11,7 +11,6 @@ import SpriteKit
 class PlayButton: SKSpriteButton {
     
     override func buttonAction() {
-        //print("pressed the play button!!!")
         GameManager.manager.play()
     }
 }

@@ -7,23 +7,10 @@
 //
 
 import SpriteKit
-/*
-class SettingsButton: SKButtonNode {
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func buttonPress() {
-        GameManager.manager.editSettings()
-    }
-}
-*/
 
 class SettingsButton: SKSpriteButton {
     
     override func buttonAction() {
-        //print("pressed the settings button!!!")
         GameManager.manager.editSettings()
     }
 }
