@@ -14,9 +14,15 @@ class Gameboard: SKScene {
     var treasureTextures = SKTextureAtlas()
     var starParticles: SKEmitterNode!
     var didLeave = false
+    var theNewMode: String?
     
     override func didMove(to view: SKView) {
-        (boxTextures, treasureTextures) = GameManager.manager.currentTextures()
+        //(boxTextures, treasureTextures) = GameManager.manager.currentTextures()
+        
+        if let newMode = theNewMode {
+            updateWithNewMode(newMode)
+            theNewMode = nil
+        }
         
         if didLeave {
             didLeave = false
@@ -25,7 +31,22 @@ class Gameboard: SKScene {
         }
     }
     
+    func updateWithNewMode(_ newMode: String) {
+        let newBoxTextures = GameManager.manager.currentTextures().boxTextures
+        print("newBoxTextures:", newBoxTextures)
+        let pictureBoxes = childNode(withName: "pictureBoxes")!.children as! [SKReferenceNode]
+        
+        for box in pictureBoxes {
+            let newTextureName = box.name! + "-" + newMode + ".png"
+            print("newTextureName:", newTextureName)
+            let newTexture = newBoxTextures.textureNamed(newTextureName)
+            box.childNode(withName: "picture")!.run(SKAction.setTexture(newTexture))
+        }
+    }
+    
     func setup() {
+        (boxTextures, treasureTextures) = GameManager.manager.currentTextures()
+        
         createPictureBoxes()
         resetTreasureZone()
         
@@ -68,6 +89,7 @@ class Gameboard: SKScene {
                 
                 for child in newPictureBox.children {
                     let newChild = child.copy() as! SKNode
+                    newChild.name = child.name!
                     child.removeFromParent()
                     box.addChild(newChild)
                 }
@@ -75,7 +97,10 @@ class Gameboard: SKScene {
                 let rando = Int(arc4random_uniform(UInt32(textureNames.count)))
                 let textureName = textureNames.remove(at: rando)
                 let texture = boxTextures.textureNamed(textureName)
+                print("textureName:", textureName)
                 box.childNode(withName: "picture")!.run(SKAction.setTexture(texture))
+                box.name = textureName.components(separatedBy: "-").first!
+                print("box name:", box.name!)
             } else {
                 print("couldn't reset the picture box.")
             }

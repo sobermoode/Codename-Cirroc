@@ -53,13 +53,14 @@ extension Settings: UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = UIColor(red: 194/255, green: 145/255, blue: 0, alpha: 1)
         let mode = modes.textureNames[indexPath.row]
         let modeTexture = modes.textureNamed(mode)
-        cell.modeImage.image = UIImage(cgImage: modeTexture.cgImage(), scale: 0.75, orientation: UIImageOrientation.up) //UIImage(cgImage: modeTexture.cgImage())
+        cell.modeImage.image = UIImage(cgImage: modeTexture.cgImage())
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mode = modes.textureNames[indexPath.row]
+        var mode = modes.textureNames[indexPath.row]
+        mode = mode.components(separatedBy: ".").first!
         GameManager.manager.changeMode(to: mode)
     }
 }

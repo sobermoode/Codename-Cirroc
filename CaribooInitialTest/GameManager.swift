@@ -74,6 +74,9 @@ extension GameManager {
     func updateActiveGame() {
         /// if an active game exists, call after changing the theme or mode, so that the box textures
         /// update in the background, before the user exits the settings screen
+        if previousScene!.name == "Gameboard" {
+            (previousScene as! Gameboard).updateWithNewMode(currentMode)
+        }
     }
     
     mutating func reset() {
@@ -88,7 +91,7 @@ extension GameManager {
     
     mutating func changeTheme(to newTheme: String!) {
         guard newTheme != nil else {
-            fatalError("changeTheme(to:) cannot be used without supplying a valid theme name!!!")
+            fatalError("Don't forget about a valid theme!!! :: changeTheme(to:)")
         }
         
         currentTheme = newTheme
@@ -107,6 +110,9 @@ extension GameManager {
         boxTextures = SKTextureAtlas(named: currentTheme + "-" + currentMode)
         treasureTextures = SKTextureAtlas(named: "coins")
         
-        updateActiveGame()
+        //updateActiveGame()
+        if previousScene!.name == "Gameboard" {
+            (previousScene as! Gameboard).theNewMode = newMode
+        }
     }
 }
