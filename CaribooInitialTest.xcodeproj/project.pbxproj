@@ -25,12 +25,12 @@
 		8169661C1EFD8F030059EF19 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661B1EFD8F030059EF19 /* SKSpriteNode.swift */; };
 		8169661E1EFD8FC30059EF19 /* NextLetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */; };
 		816966201EFDB38A0059EF19 /* letters.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8169661F1EFDB38A0059EF19 /* letters.atlas */; };
+		81B777401F4DB62D00697C3F /* animals-pictures.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81B7773E1F4DB62D00697C3F /* animals-pictures.atlas */; };
+		81B777411F4DB62D00697C3F /* animals-words.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81B7773F1F4DB62D00697C3F /* animals-words.atlas */; };
 		81BAF83E1F141D6B0001E6EF /* StarParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81BAF83D1F141D6B0001E6EF /* StarParticles.sks */; };
 		81BE96551F05A63F008A9638 /* Actual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BE96541F05A63F008A9638 /* Actual.swift */; };
 		81E19B681F23ACD0002F70E5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B671F23ACD0002F70E5 /* GameManager.swift */; };
 		81E19B6C1F23B0EC002F70E5 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B6B1F23B0EC002F70E5 /* Themes.swift */; };
-		81E19B711F256AA4002F70E5 /* animals-pictures.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B6F1F256AA4002F70E5 /* animals-pictures.atlas */; };
-		81E19B721F256AA4002F70E5 /* animals-words.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B701F256AA4002F70E5 /* animals-words.atlas */; };
 		81E19B741F26554F002F70E5 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 81E19B731F26554F002F70E5 /* MainMenu.sks */; };
 		81E19B761F26558B002F70E5 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B751F26558B002F70E5 /* MainMenu.swift */; };
 		81E19B781F269AA7002F70E5 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E19B771F269AA7002F70E5 /* PlayButton.swift */; };
@@ -85,12 +85,12 @@
 		8169661B1EFD8F030059EF19 /* SKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
 		8169661D1EFD8FC30059EF19 /* NextLetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextLetterButton.swift; sourceTree = "<group>"; };
 		8169661F1EFDB38A0059EF19 /* letters.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = letters.atlas; path = ../letters.atlas; sourceTree = "<group>"; };
+		81B7773E1F4DB62D00697C3F /* animals-pictures.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-pictures.atlas"; sourceTree = "<group>"; };
+		81B7773F1F4DB62D00697C3F /* animals-words.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-words.atlas"; sourceTree = "<group>"; };
 		81BAF83D1F141D6B0001E6EF /* StarParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StarParticles.sks; sourceTree = "<group>"; };
 		81BE96541F05A63F008A9638 /* Actual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actual.swift; sourceTree = "<group>"; };
 		81E19B671F23ACD0002F70E5 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		81E19B6B1F23B0EC002F70E5 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
-		81E19B6F1F256AA4002F70E5 /* animals-pictures.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-pictures.atlas"; sourceTree = "<group>"; };
-		81E19B701F256AA4002F70E5 /* animals-words.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "animals-words.atlas"; sourceTree = "<group>"; };
 		81E19B731F26554F002F70E5 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
 		81E19B751F26558B002F70E5 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		81E19B771F269AA7002F70E5 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
@@ -217,10 +217,10 @@
 		81BE96591F05A91D008A9638 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81B7773E1F4DB62D00697C3F /* animals-pictures.atlas */,
+				81B7773F1F4DB62D00697C3F /* animals-words.atlas */,
 				811549A41EFB77AE00E8DFD9 /* Assets.xcassets */,
 				812187D01F4CDE31009D0094 /* modes.atlas */,
-				81E19B6F1F256AA4002F70E5 /* animals-pictures.atlas */,
-				81E19B701F256AA4002F70E5 /* animals-words.atlas */,
 				81F1667B1F0C3369007A65FC /* coins.atlas */,
 			);
 			name = Images;
@@ -329,12 +329,12 @@
 				81EBC1B41F0178B4003DEC56 /* PictureBox.sks in Resources */,
 				8115499A1EFB77AE00E8DFD9 /* GameScene.sks in Resources */,
 				81F1667E1F0D5FCA007A65FC /* TreasureZone.sks in Resources */,
-				81E19B721F256AA4002F70E5 /* animals-words.atlas in Resources */,
 				811549A51EFB77AE00E8DFD9 /* Assets.xcassets in Resources */,
 				816966201EFDB38A0059EF19 /* letters.atlas in Resources */,
 				812187D11F4CDE31009D0094 /* modes.atlas in Resources */,
+				81B777411F4DB62D00697C3F /* animals-words.atlas in Resources */,
 				811549A81EFB77AE00E8DFD9 /* LaunchScreen.storyboard in Resources */,
-				81E19B711F256AA4002F70E5 /* animals-pictures.atlas in Resources */,
+				81B777401F4DB62D00697C3F /* animals-pictures.atlas in Resources */,
 				811549B11EFB791E00E8DFD9 /* Gameboard.sks in Resources */,
 				81BAF83E1F141D6B0001E6EF /* StarParticles.sks in Resources */,
 				81F1667C1F0C3369007A65FC /* coins.atlas in Resources */,
