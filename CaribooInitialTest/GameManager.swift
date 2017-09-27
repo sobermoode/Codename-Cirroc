@@ -15,6 +15,7 @@ struct GameManager {
     static let defaultTheme = GameTheme.animals
     static let defaultMode = GameMode.pictures
     
+    var currentDevice: UIUserInterfaceIdiom!
     var previousScene, currentScene: SKScene?
     var currentCoin: String {
         return "coin" + String(foundCoins)
@@ -46,6 +47,7 @@ extension GameManager {
     
     mutating func play() {
         let gameboard = SKScene(fileNamed: "Gameboard") as! Gameboard
+        gameboard.scaleMode = (currentDevice == .phone) ? .aspectFill : .aspectFit
         
         currentScene!.view!.presentScene(gameboard)
         
@@ -54,6 +56,7 @@ extension GameManager {
     
     mutating func editSettings() {
         let settingsScene = SKScene(fileNamed: "Settings") as! Settings
+        settingsScene.scaleMode = (currentDevice == .phone) ? .aspectFill : .aspectFit
         
         currentScene!.view!.presentScene(settingsScene, transition: SKTransition.moveIn(with: .down, duration: 0.3))
         if currentScene!.name == "Gameboard" {

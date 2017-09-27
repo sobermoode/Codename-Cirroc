@@ -18,7 +18,13 @@ class GameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             if let mainMenu = SKScene(fileNamed: "MainMenu") as? MainMenu {
                 // Set the scale mode to scale to fit the window
-                mainMenu.scaleMode = .aspectFill
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    GameManager.manager.currentDevice = .phone
+                    mainMenu.scaleMode = .aspectFill
+                } else if UIDevice.current.userInterfaceIdiom == .pad {
+                    GameManager.manager.currentDevice = .pad
+                    mainMenu.scaleMode = .aspectFit
+                }
                 
                 // Present the scene
                 view.presentScene(mainMenu)
